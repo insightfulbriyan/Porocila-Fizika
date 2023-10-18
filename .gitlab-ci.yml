@@ -31,7 +31,7 @@ build-pdf:
 
 success_notification:
   image: alpine:latest
-  stage: notification
+  stage: deploy
   script:
     - apk add --update git curl
     - wget https://raw.githubusercontent.com/DiscordHooks/gitlab-ci-discord-webhook/master/send.sh
