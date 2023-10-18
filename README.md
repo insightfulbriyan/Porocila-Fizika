@@ -1,0 +1,1 @@
+To je repozitorij iz katerega bodo lahko v prihodnosti dijaki Vegove Ljubljana potegnili LaTeX predlogo za izdelavo njihove seminarske naloge.
