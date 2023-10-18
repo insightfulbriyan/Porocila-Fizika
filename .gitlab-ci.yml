@@ -36,4 +36,4 @@ success_notification:
     - apk add --update git curl
     - wget https://raw.githubusercontent.com/DiscordHooks/gitlab-ci-discord-webhook/master/send.sh
     - chmod +x send.sh
-    - /bin/ash ./send.sh success <webhook>
+    - /bin/ash ./send.sh success $WEBHOOK
