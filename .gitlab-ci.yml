@@ -2,9 +2,9 @@ image: registry.gitlab.com/islandoftex/images/texlive:latest
 
 build:
   script:
-    - pdflatex Naloga.tex
-    - biber Naloga
-    - pdflatex Naloga.tex
+    - pdflatex ./Naloga.tex
+    - biber ./Naloga
+    - pdflatex ./Naloga.tex
   after_script:
     - cat Naloga.log
   artifacts:
