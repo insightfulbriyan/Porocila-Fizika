@@ -1,8 +1,9 @@
 build:
   image: archlinux:latest
   script:
-    - pacman -S --noconfirm texlive
-    - pacman -S --noconfirm texlive-langeuropean biber
+    - pacman -Syu --noconfirm
+    - pacman -Sy --noconfirm texlive
+    - pacman -Sy --noconfirm texlive-langeuropean biber
     - ./script.sh
     - wget https://raw.githubusercontent.com/DiscordHooks/gitlab-ci-discord-webhook/master/send.sh
     - chmod +x send.sh
