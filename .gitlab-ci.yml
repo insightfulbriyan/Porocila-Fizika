@@ -1,8 +1,9 @@
 build:
-  image: docker:latest
+  image: archlinux:latest
   script:
-    - docker build --tag seminarska .
-    - docker run --rm -v .:/data seminarska
+    - pacman -S --noconfirm texlive
+    - pacman -S --noconfirm texlive-langeuropean biber
+    - ./script.sh
     - wget https://raw.githubusercontent.com/DiscordHooks/gitlab-ci-discord-webhook/master/send.sh
     - chmod +x send.sh
     - /bin/ash ./send.sh success $WEBHOOK
