@@ -1,22 +1,11 @@
-image: registry.gitlab.com/islandoftex/images/texlive:latest
-
 build:
+  image: docker:latest
   script:
-    - pdflatex ./Naloga.tex
-    - biber ./Naloga
-    - pdflatex ./Naloga.tex
-  after_script:
-    - cat Naloga.log
+    - docker build --tag seminarska .
+    - docker run --rm -v .:/data seminarska
+    - wget https://raw.githubusercontent.com/DiscordHooks/gitlab-ci-discord-webhook/master/send.sh
+    - chmod +x send.sh
+    - /bin/ash ./send.sh success $WEBHOOK
   artifacts:
     paths:
       - Naloga.pdf
-
-
-# success_notification:
-#   image: alpine:latest
-#   stage: deploy
-#   script:
-#     - apk add --update git curl
-#     - wget https://raw.githubusercontent.com/DiscordHooks/gitlab-ci-discord-webhook/master/send.sh
-#     - chmod +x send.sh
-#     - /bin/ash ./send.sh success $WEBHOOK
