@@ -20,6 +20,8 @@
 \usepackage[normalem]{ulem}         % Krašanje enot v enačbi
 \usepackage{times}                  % Times New Roman pisava
 \usepackage{tikz} 
+\usetikzlibrary{patterns}
+\usetikzlibrary{arrows}
 \usepackage[european]{circuitikz}   % Električna vezja
 \usepackage{datetime}               % Datum
 % \usepackage[slovenian]{csquotes}
@@ -27,7 +29,7 @@
 \usepackage{amsmath} % matematika ki izgleda lepo
 \usepackage{amsfonts} % množice
 \usepackage[style=ieee, maxbibnames=3, minbibnames=1, 
-    maxcitenames=1, mincitenames=1, sorting=nyt]{biblatex}   % Navajanje virov
+maxcitenames=1, mincitenames=1, sorting=nyt]{biblatex}   % Navajanje virov
 \bibliography{viri}
 
 \urlstyle{rm}
@@ -49,13 +51,28 @@
 \DeclareFieldFormat[online]{title}{\mkbibemph{#1}}
 
 \DefineBibliographyStrings{slovene}{
-  andothers = {et. al\adddot},
-  urlseen = {dostopano:}
+    andothers = {et. al\adddot},
+    urlseen = {dostopano:}
+}
+    % Adapted from the 'patterns' library: enlarged the distance between the lines from 4pt to 10pt
+\pgfdeclarepatternformonly{north east lines wide}{\pgfqpoint{-1pt}{-1pt}}{\pgfqpoint{10pt}{10pt}}{\pgfqpoint{9pt}{9pt}}%
+{
+    \pgfsetlinewidth{0.4pt}
+    \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+    \pgfpathlineto{\pgfqpoint{9.1pt}{9.1pt}}
+    \pgfusepath{stroke}
 }
 
+
+\tikzset{%
+    body/.style={inner sep=0pt,outer sep=0pt,shape=rectangle,draw,thick,pattern=north east lines wide},
+    dimen/.style={<->,>=latex,thin,every rectangle node/.style={fill=white,midway,font=\sffamily}},
+    symmetry/.style={dashed,thin},
+}
+    
 \newdateformat{MMYYYYdate}{\monthname[\THEMONTH] \THEYEAR}
 
-\title{Naslov naloge}
+\title{Poročila maturitetnih vaj pri predmetu fizika}
 \author{Jaka Kovač, G 4. b}
 
 \begin{document}
@@ -68,16 +85,16 @@
     \textbf{Vegova ulica 4, 1000 Ljubljana}
 
     \vspace{\fill} 
-    Seminarska naloga pri predmetu predmet
+    Poročila vaj pri predmetu fizika
 
-    \Huge{\textbf{Naslov naloge}}
+    \Huge{\textbf{Poročila maturitetnih vaj}}
 
     \normalsize
     \vspace{\fill}
 
-    Mentor: Mentor Priimek, prof. \hfill Avtor: Jaka Kovač, G 4. b\\
+    Mentor: Tomo Omahna, prof. \hfill Avtor: Jaka Kovač, G 4. b\\
     \null
-    Ljubljana, mesec leto – \MMYYYYdate\today %zamenjaj <mesec in leto> z mesecem in letom začetka
+    Ljubljana, oktober 2023 – \MMYYYYdate\today %zamenjaj <mesec in leto> z mesecem in letom začetka
 \end{center}
 \newpage
 \thispagestyle{empty}
@@ -85,9 +102,10 @@
 \newpage
 
 \section*{Povzetek}
-V tej seminarski nalogi bom predstavil kako uporabiti \LaTeX{} za pisanje seminarske naloge.
+V tem delu bom predstavil kako sem izvedel maturitene vaje, njihove rezultate. Ob vsaki vaji
+sem preverjal veljavnost meritev s teoretično izračunaimi vrednostmi.
 \\ %prazna vrstica
-\textbf{Ključe besede:} \LaTeX{}, seminarska naloga, \LaTeX{} predloga
+\textbf{Ključe besede:} poročila maturitetnih vaj - fizika, fizika za srednjo šolo
 
 \vfill
 \section*{Abstract}
@@ -111,93 +129,183 @@ V tej seminarski nalogi bom predstavil kako uporabiti \LaTeX{} za pisanje semina
 
 
 \newpage
-\section{Uvod}
-Orodje \LaTeX mi je zelo všeč zato sem se odločil, da bom napisal seminarsko nalogo v njem.
-Primer seminarske naloge napisane v \LaTeX-u najdeš na https://github.com/insightfulbriyan/Komunkacijska-vezja-in-naprave.
 
-\section{Namestitev \LaTeX-a}
-    \subsection{Linux}
-    Ustvarimo si mapo v katero bomo namestili \LaTeX{} in se v njo premaknemo. Najbolje je da to storiš v /home/username/Downloads.
-    \begin{lstlisting}[language=bash]
-        mkdir latex
+\section*{O zapisu meritev}
+Prikazane številčne vrednosti so zaokrožene na 3 od 0 različna decimalna mesta (znanstven zapis).
+V izračunih se uporablja dejanska vrednost. Kjer ni drugače navedeno je vrednost podana na
+$\pm 0.5$ enot na zadnjem prikazanem mestu. Primer: $s = 10.0 \text{ m} = 10.0 \text{ m} \pm 0.05 \text{ m}$
 
-        cd latex
-    \end{lstlisting}
-
-    Nato si prenesemo namestitveni paket iz https://www.tug.org/texlive/acquire-netinstall.html in ga razpakiramo.
-    \begin{lstlisting}[language=bash]
-        wget https://mirror.ctan.org/systems/
-        texlive/tlnet/install-tl-unx.tar.gz
-
-        tar -xzf install-tl-unx.tar.gz
-
-        cd install-tl-*
-    \end{lstlisting}
-
-    Kot sudo zašemeno namestitveno skripto. Bodi pripravljen, popolna namestitev lahko traja nekaj ur. 
-    \begin{lstlisting}[language=bash]
-        sudo ./install-tl
-    \end{lstlisting}
-    POZOR:
-    Predlagam, da namestiš vse pakete. Če veš, da nekaterih ne boš potreboval potem lahko prihraniš nekaj časa (zanemarljiv malo, glede na izkušnje)
-
-    \subsection{Windows}
-    IDK, vprašaj koga drugega. Prosim dopolni to poglavje.
-
-    \subsection{MacOS}
-    IDK, vprašaj koga drugega. Prosim dopolni to poglavje.
+\section{Lastno nihanje vzmetnega nihala}
+    \subsection*{Opis vaje in teoritična podlaga}
+    \subsection*{Uporabljeni pripomočki}
+    \subsection*{Grafi, ipd.}
+    \subsection*{Analiza rezultatov}
 
 \newpage
-\section{Uporaba \LaTeX-a}
-    Spletni vodič: https://www.overleaf.com/learn/latex/Learn\_LaTeX\_in\_30\_minutes
-    \begin{verbatim}
-        \section{Naslov poglavja}
-        \subsection{Naslov podpoglavja}
-        \subsubsection{Naslov podpodpoglavja}
-        \paragraph{Naslov odstavka (podpodpodpoglavja)}
-        \subparagraph{Naslov pododstavka}
-    \end{verbatim}
+\section{Prosti pad}
+    \subsection*{Opis vaje in teoritična podlaga}
+    \subsection*{Uporabljeni pripomočki}
+    \subsection*{Grafi, ipd.}
+    \subsection*{Analiza rezultatov}
 
-    Uporbni vodič za pisanje tehničnih besedil: http://lie.fe.uni-lj.si/Napotki\_TehnicnaBesedila.pdf \\
-    dodatno pozornost posveti prvi in drugi strani ter obkroženim delom. \\
-    p.s.: Vodič vsebuje tudi pogoste slovnične napake (od vključno napotka 36 dalje)
-    \subsection{Slike}
-    \begin{verbatim}
-        \begin{figure}[h]
-            \centering
-            \includegraphics[scale=0.5]{slike/vegova\_logo.png}
-            \caption{Vegova logo}
-            \label{fig:vegova\_logo}
-        \end{figure}
-    \end{verbatim}
+\newpage
+\section{Odbojnost}
+    \subsection*{Opis vaje in teoritična podlaga}
+    \subsection*{Uporabljeni pripomočki}
+    \subsection*{Grafi, ipd.}
+    \subsection*{Analiza rezultatov}
 
-    \subsection{Formule}
-    https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf
+\newpage
+\section{Boylov zakon}
+    \subsection*{Opis vaje in teoritična podlaga}
+    \subsection*{Uporabljeni pripomočki}
+    \subsection*{Grafi, ipd.}
+    \subsection*{Analiza rezultatov}
+
+\newpage
+\section{Atwoodovo padalo}
+    \subsection*{Opis vaje in teoritična podlaga}
+    \subsection*{Uporabljeni pripomočki}
+    \subsection*{Grafi, ipd.}
+    \subsection*{Analiza rezultatov}
+
+\newpage
+\section{Dušeno nihanje v električnem krogu}
+    \subsection*{Opis vaje in teoritična podlaga}
+    Cilj vaje je izračunati koeficient dušenja $\beta$ v dušemen električnem nihajenm krogu.
+    
+    \subsection*{Uporabljeni pripomočki}
+    \subsection*{Grafi, ipd.}
+    \subsection*{Analiza rezultatov}
+
+\newpage
+\section{Gostota zemljinega električnega polja}
+    \subsection*{Opis vaje in teoritična podlaga}
+    \subsection*{Uporabljeni pripomočki}
+    \subsection*{Grafi, ipd.}
+    \subsection*{Analiza rezultatov}
+
+\newpage
+\section{Merjenje goriščne razdalje leč}
+    \subsection*{Opis vaje in teoritična podlaga}
+    Vaja zajema merjenje goriščne razdalje konveksne (zbiralne), konkavne (razpršilne) in 
+    stavljene leče. Formula za izračun goriščne razdalje leče je $f = 2R$, kjer je $f$ 
+    goriščna razdalja, $R$ pa polmer leče ali zrcala. Goriščna razdalja sestavljene leče
+    (dve zaporedni leči) se izračuna z $\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{d}{f_1 \cdot f_2}$
+    \cite{lece}, kjer sta $f_1$ in $f_2$ goriščni razdalji sestavnih leč, $d$ pa razdalja med njima.
+
+    \subsection*{Uporabljeni pripomočki}
+    Svetilka v ohišju z režami, ŠMI z vezicami, milimeterski papir, svinčnik, geotrikotnik, 
+    konveksna in konkavna leča ($R = 35 \text{ mm}$ za obe leči)
+    \subsection*{Skice}
+    
+    %Zbiralna leča
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}
+            \draw[black, very thick] (-6,-4.5) rectangle (9,4);
+            \draw[dash=on 2mm off 2mm phase -1mm] (-5, 0) -- (8, 0);
+                
+            %leča
+            \draw[very thick] (0, 3.5) arc (90:270:3.5);
+            \draw[very thick] (0, 3.5) -- (0, -3.5);
+            
+            %žarki
+            \draw[thick] (-5, 1.9) -- (-2.95, 1.9) -- (8, -0.9);
+            \draw[thick] (-5, -2.2) -- (-2.7, -2.2) -- (8, 1.25);
+            
+            %meritev
+            \draw (-3.5, 0) -- (-3.5, -4);
+            \draw (4.27, 0) -- (4.27, -4);
+            \draw[dimen] (-3.5, -4) -- (4.27, -4) node {$77 \text{ mm} \pm 0,5 \text{ mm}$};
+        \end{tikzpicture}
+        \caption{Zbiralna leča}
+    \end{figure}
+    
+    %Razpršilna leča
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}
+            \draw[black, very thick] (-6,-4.5) rectangle (5, 3.5);
+            \draw[dash=on 2mm off 2mm phase -1mm] (-5, 0) -- (4, 0);
+            
+            %leča
+            \draw[very thick] (-2.48, 2.48) arc (135:225:3.5);
+            \draw[very thick] (-2.48, 2.48) -- (-4, 2.48) -- (-4, -2.48) -- (-2.48, -2.48);
+            
+            %žarki
+            \draw[thick] (4, 1.75) -- (-3.05, 1.75) -- (-5, 2.25);
+            \draw[thick] (4, -1.75) -- (-3.05, -1.75) -- (-5, -2.26);
+            \draw[thick, dash=on 1mm off 1mm phase 0mm] (-3.05, 1.75) -- (4, -0.05);
+            \draw[thick, dash=on 1mm off 1mm phase 0mm] (-3.05, -1.75) -- (4, 0.1);
+            
+            %meritev
+            \draw (-3.5, 0) -- (-3.5, -4);
+            \draw (3.7, 0) -- (3.7, -4);
+            \draw[dimen] (-3.5, -4) -- (3.7, -4) node {$72 \text{ mm} \pm 0,5 \text{ mm}$};
+        \end{tikzpicture}
+        \caption{Razpršilna leča}
+    \end{figure}
+    
+    %Sestavljena leča
+    \begin{figure}[h!]
+        \makebox[\textwidth][c]{
+            \begin{tikzpicture}
+                \draw[black, very thick] (-10,-4.5) rectangle (10, 3.5);
+                \draw[dash=on 2mm off 2mm phase -1mm] (-9, 0) -- (9, 0);
+                
+                %zibralna leča
+                \draw[very thick] (-6.5, 2.47) arc (135:225:3.5) -- (-6.1, -2.48) -- (-6.1, 2.47) -- (-6.5, 2.47);
+                
+                %razpršilna leča
+                \draw[very thick] (-3.13, -2.48) arc (-45:45:3.5) -- (-1.6, 2.47) -- (-1.6, -2.48) -- (-3.13, -2.48);
+                
+                %žarki
+                \draw[thick] (-9, 1.35) -- (-7.25, 1.35) -- (-2.15, 0.62) -- (9, 0.07);
+                \draw[thick] (-9, -1.35) -- (-7.25, -1.35) -- (-2.15, -0.62) -- (9, 0.13);
+                
+                %meritve
+                \draw (-7.53, 0) -- (-7.53, -4);
+                \draw (8.55, 0) -- (8.55, -4);
+                \draw[dimen] (-7.53, -4) -- (8.55, -4) node {$157 \text{ mm} \pm 0,5 \text{ mm}$};
+                \draw (-2.1, 0) -- (-2.1, -4);
+                \draw[dimen] (-7.53, -3.6) -- (-2.1, -3.6) node {$51 \text{ mm} \pm 0,5 \text{ mm}$};
+            \end{tikzpicture}
+            }
+        \caption{Sestavljena leča}
+    \end{figure}
+    \newpage
+    \subsection*{Analiza rezultatov}
+    Izmerjena goriščna razdalja konveksne leče je $f = 77 \text{ mm} \pm 0,5 \text{ mm}$,
+    izračunana razdalja pa je 
     \begin{equation}
-        E = mc^2
-    \end{equation}
-    $$\frac{1}{2}$$
-    $$\sqrt{2}$$
+        f = 2R = 2 \cdot 35 \text{ mm} = 70 \text{ mm}
+    \end{equation}.\\
+    Za konkavno lečo pa sem izmeril goriščno razdaljo $f = 72 \text{ mm} \pm 0,5 \text{ mm}$, 
+    izračunana goriščna razdalja je 
     \begin{equation}
-        \frac{a}{b} = \frac{c}{d} \Rightarrow a*d = b*d
+        f = -2R = -2 \cdot 35 \text{ mm} = -70 \text{ mm}
+    \end{equation}.\\
+    Pri sestavljeni lečo sem izmeril goriščno razdaljo $f = 157 \text{ mm} \pm 0,5 \text{ mm}$,
+    izračunal pa sem
+    \begin{equation}
+        \begin{split}
+            \frac{1}{f} &= \frac{1}{f_1} + \frac{1}{f_2} - \frac{d}{f_1 \cdot f_2} \\
+            f &= (\frac{1}{-70 \text{ mm}} + \frac{1}{70 \text{ mm}} - \frac{51 \text{ mm}}{-70 \text{ mm} \cdot 70 \text{ mm}})^{-1}\\
+            f &= 102 \text{ mm}
+        \end{split}
     \end{equation}
-
-    Enačbe in formule naj bodo obdane z equation wrapperjem, izrazi načeloma ne potrebujejo.
-    Posvetuj se s povesorjem, ki bo ocenjeval seminarsko nalogo. Izrazi izven wrapperja morajo biti obdani z \$\$.
+    če za izračun uporabimo izmerjene vrednosti dobimo, da je goriščna razdalja $f = 120 \text{ mm}$.
+    Kljub vsemu osnovne formule za izračun goriščne razdalje sestavljene leče sam ne morem
+    potrditi.
 
 
 \newpage
-\section{BibTeX}
-    \subsection{Izvoz iz COBISS-a}
-    COBISS podpira izvažanje citiranja v format BibTeX. To opcijo izkoristi.
-    Tudi Google Scholar podpira izvoz v BibTeX formatu.
-    \subsection{Izvoz iz spletnega pomočnika}
-    Predlagam: https://boberle.com/projects/bibtex-entry-generator/online/
-    Lahko uporabiš tudi JabRef (https://www.jabref.org/), ki je podprt na vseh namiznih opeacijskih sistemih.
-    \subsection{Samostojo pisanje}
-    Spletni vodič za začetek: https://www.overleaf.com/learn/latex/Bibliography\_management\_with\_bibtex
-    Drugače pa uporabi Google.
-
+\section{Plinski emisijski spektri}
+    \subsection*{Opis vaje in teoritična podlaga}
+    \subsection*{Uporabljeni pripomočki}
+    \subsection*{Grafi, ipd.}
+    \subsection*{Analiza rezultatov}
 
 
 
