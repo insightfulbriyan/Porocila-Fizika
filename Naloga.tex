@@ -2,14 +2,14 @@
 
 
 \usepackage[
-    a4paper, 
-    margin=2.5cm]{geometry}
+	a4paper, 
+	margin=2.5cm]{geometry}
 \usepackage[utf8]{inputenc}         % UTF8 enkodiranje
 \usepackage[slovene]{babel}          % Slovenščina
 \usepackage[
-    pdfusetitle, 
-    hidelinks, 
-    unicode]{hyperref}              % Nastavi atribute PDF-ja, ne označuj povezav
+	pdfusetitle, 
+	hidelinks, 
+	unicode]{hyperref}              % Nastavi atribute PDF-ja, ne označuj povezav
 \usepackage{microtype}              % Izboljšave za tipografijsko perfekcijo :)
 \usepackage{enumitem}               % Seznami za člene
 \usepackage{graphicx}               % Vključitev slik
@@ -51,25 +51,25 @@ maxcitenames=1, mincitenames=1, sorting=nyt]{biblatex}   % Navajanje virov
 \DeclareFieldFormat[online]{title}{\mkbibemph{#1}}
 
 \DefineBibliographyStrings{slovene}{
-    andothers = {et. al\adddot},
-    urlseen = {dostopano:}
+	andothers = {et. al\adddot},
+	urlseen = {dostopano:}
 }
-    % Adapted from the 'patterns' library: enlarged the distance between the lines from 4pt to 10pt
+	% Adapted from the 'patterns' library: enlarged the distance between the lines from 4pt to 10pt
 \pgfdeclarepatternformonly{north east lines wide}{\pgfqpoint{-1pt}{-1pt}}{\pgfqpoint{10pt}{10pt}}{\pgfqpoint{9pt}{9pt}}%
 {
-    \pgfsetlinewidth{0.4pt}
-    \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
-    \pgfpathlineto{\pgfqpoint{9.1pt}{9.1pt}}
-    \pgfusepath{stroke}
+	\pgfsetlinewidth{0.4pt}
+	\pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+	\pgfpathlineto{\pgfqpoint{9.1pt}{9.1pt}}
+	\pgfusepath{stroke}
 }
 
 
 \tikzset{%
-    body/.style={inner sep=0pt,outer sep=0pt,shape=rectangle,draw,thick,pattern=north east lines wide},
-    dimen/.style={<->,>=latex,thin,every rectangle node/.style={fill=white,midway,font=\sffamily}},
-    symmetry/.style={dashed,thin},
+	body/.style={inner sep=0pt,outer sep=0pt,shape=rectangle,draw,thick,pattern=north east lines wide},
+	dimen/.style={<->,>=latex,thin,every rectangle node/.style={fill=white,midway,font=\sffamily}},
+	symmetry/.style={dashed,thin},
 }
-    
+	
 \newdateformat{MMYYYYdate}{\monthname[\THEMONTH] \THEYEAR}
 
 \title{Poročila maturitetnih vaj pri predmetu fizika}
@@ -79,22 +79,22 @@ maxcitenames=1, mincitenames=1, sorting=nyt]{biblatex}   % Navajanje virov
 \pagenumbering{arabic}
 
 \begin{center}
-    \thispagestyle{empty}
-    \includegraphics[scale=1]{slike/logotip_vegova_leze_brezokvirja.png}
-    \\
-    \textbf{Vegova ulica 4, 1000 Ljubljana}
+	\thispagestyle{empty}
+	\includegraphics[scale=1]{slike/logotip_vegova_leze_brezokvirja.png}
+	\\
+	\textbf{Vegova ulica 4, 1000 Ljubljana}
 
-    \vspace{\fill} 
-    Poročila vaj pri predmetu fizika
+	\vspace{\fill} 
+	Poročila vaj pri predmetu fizika
 
-    \Huge{\textbf{Poročila maturitetnih vaj}}
+	\Huge{\textbf{Poročila maturitetnih vaj}}
 
-    \normalsize
-    \vspace{\fill}
+	\normalsize
+	\vspace{\fill}
 
-    Mentor: Tomo Omahna, prof. \hfill Avtor: Jaka Kovač, G 4. b\\
-    \null
-    Ljubljana, oktober 2023 – \MMYYYYdate\today %zamenjaj <mesec in leto> z mesecem in letom začetka
+	Mentor: Tomo Omahna, prof. \hfill Avtor: Jaka Kovač, G 4. b\\
+	\null
+	Ljubljana, oktober 2023 – \MMYYYYdate\today %zamenjaj <mesec in leto> z mesecem in letom začetka
 \end{center}
 \newpage
 \thispagestyle{empty}
@@ -136,200 +136,267 @@ V izračunih se uporablja dejanska vrednost. Kjer ni drugače navedeno je vredno
 $\pm 0.5$ enot na zadnjem prikazanem mestu. Primer: $s = 10.0 \text{ m} = 10.0 \text{ m} \pm 0.05 \text{ m}$
 
 \section{Lastno nihanje vzmetnega nihala}
-    \subsection*{Opis vaje in teoritična podlaga}
-    \subsection*{Uporabljeni pripomočki}
-    \subsection*{Grafi, ipd.}
-    \subsection*{Analiza rezultatov}
+	\subsection*{Opis vaje in teoritična podlaga}
+	\subsection*{Uporabljeni pripomočki}
+	\subsection*{Grafi, ipd.}
+	\subsection*{Analiza rezultatov}
 
 \newpage
 \section{Prosti pad}
-    \subsection*{Opis vaje in teoritična podlaga}
-    \subsection*{Uporabljeni pripomočki}
-    \subsection*{Grafi, ipd.}
-    \subsection*{Analiza rezultatov}
+	\subsection*{Opis vaje in teoritična podlaga}
+	\subsection*{Uporabljeni pripomočki}
+	\subsection*{Grafi, ipd.}
+	\subsection*{Analiza rezultatov}
 
 \newpage
 \section{Odbojnost}
-    \subsection*{Opis vaje in teoritična podlaga}
-    \subsection*{Uporabljeni pripomočki}
-    \subsection*{Grafi, ipd.}
-    \subsection*{Analiza rezultatov}
+	\subsection*{Opis vaje in teoritična podlaga}
+	\subsection*{Uporabljeni pripomočki}
+	\subsection*{Grafi, ipd.}
+	\subsection*{Analiza rezultatov}
 
 \newpage
 \section{Boylov zakon}
-    \subsection*{Opis vaje in teoritična podlaga}
-    \subsection*{Uporabljeni pripomočki}
-    \subsection*{Grafi, ipd.}
-    \subsection*{Analiza rezultatov}
+	\subsection*{Opis vaje in teoritična podlaga}
+	\subsection*{Uporabljeni pripomočki}
+	\subsection*{Grafi, ipd.}
+	\subsection*{Analiza rezultatov}
 
 \newpage
 \section{Atwoodovo padalo}
-    \subsection*{Opis vaje in teoritična podlaga}
-    \subsection*{Uporabljeni pripomočki}
-    \subsection*{Grafi, ipd.}
-    \subsection*{Analiza rezultatov}
+	\subsection*{Opis vaje in teoritična podlaga}
+	\subsection*{Uporabljeni pripomočki}
+	\subsection*{Grafi, ipd.}
+	\subsection*{Analiza rezultatov}
 
 \newpage
 \section{Dušeno nihanje v električnem krogu}
-    \subsection*{Opis vaje in teoritična podlaga}
-    Cilj vaje je izračunati koeficient dušenja $\beta$ v dušemen električnem nihajenm krogu.
-    
-    \subsection*{Uporabljeni pripomočki}
-    \subsection*{Grafi, ipd.}
-    \subsection*{Analiza rezultatov}
+	\subsection*{Opis vaje in teoritična podlaga}
+	Cilj vaje je izračunati koeficient dušenja $\beta$ v dušemen električnem nihajenm krogu.
+	Začnimo z enačbo dušenega nihanja \cite{nihanje}
+	\begin{equation}
+		\frac{d^2 x}{dt^2} + 2\beta\frac{dx}{dt} + \omega_0^2 x =0 .
+	\end{equation}
+	V danem nihanjem krogu lahko z II. Kirchoffovim zakonom zapišemo
+	\begin{equation}
+		U - L\frac{dI}{dt} - RI = 0.
+		\label{kirchoff}
+	\end{equation}
+	Tok v vezju lahko izračunamo z 
+	\begin{equation}
+		I = -\frac{de}{dt} = -\frac{d(CU)}{dt} = -C \frac{dU}{dt},
+	\end{equation} ko tok vstavimo v enačbo \ref{kirchoff} dobimo
+	\begin{equation}
+		\begin{split}
+			U + LC \frac{d^2U}{dt^2} + RC \frac{dU}{dt} = 0 \\
+			LC \frac{d^2U}{dt^2} + RC \frac{dU}{dt} + U = 0,
+		\end{split}
+	\end{equation} če enačbo delimo z $LC$ pri tem pa upoštevamo $LC = \frac{1}{\omega_0^2}$ 
+	lahko zapišemo
+	\begin{equation}
+		\frac{d^2U}{dt^2} + \frac{R}{L} \frac{dU}{dt} + \omega_0^2U = 0
+	\end{equation} iz česar sledi, da je $x = U$ in $2\beta = \frac{R}{L}$ v enačbi dušenega
+	nihanja. 
+	Zapišemo lahko \cite{vaje}
+	\begin{equation}
+		U = e^{-\beta t}[A sin(\omega t) + B cos(\omega t)]
+	\end{equation} kjer je $\omega = \sqrt[2]{\omega_0^2  - \beta^2}$ in $\beta = \frac{R}{2L}$.
+	Ker poznamo začetne pogoje $(\frac{dU}{dt})_0 = - \frac{I_0}{C}$ in $U_0 = I_0 R$ lahko
+	zapišemo končno enačbo za napetost
+	\begin{equation}
+		U = U_0 \cdot e^{-\beta t} sin(\omega t).
+	\end{equation}
+	\subsection*{Uporabljeni pripomočki}
+	Digitalni osciloskop, nihajni krog z elektrosnikim stikalom, ŠMI z žicami
+
+	\newpage
+	\subsection*{Posnetek zaslona osciloskopa}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\linewidth]{slike/1.png} 
+		\caption{Posnetek zaslona osciloskopa z meritvami časa pozameznega iznihaja}
+	\end{figure}
+
+	\subsection*{Analiza rezultatov}
+	Za (maksimalno) napetost vsakega pulza lahko zapišemo enačbo 
+	\begin{equation}
+		U_N = U_0 e^{-\beta ((N-1)t_0 + t_z)}, \footnote{Za $U_1$ zapišemo $U_1 = U_0 e^{-\beta t_z}$}
+	\end{equation} ker govorimo o maksimalni napetosti upoštevamo, da je $sin(\omega t) = 1$.
+	$\beta$ lahko izrazimo takole
+	\begin{equation}
+		\begin{split}
+			ln(\frac{U_1}{U_N}) = \beta (N-1) t_0 \\
+			\beta = \frac{ln(\frac{U_1}{U_N})}{(N-1) t_0}.
+		\end{split}
+	\end{equation}
+	
+
+
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			$N$ & $U_n$ [V] & $(N-1)t_0$ [$\mu$ s] & $\beta$ [$10^3 \text{ s}^{-1}$] \\ \hline
+			1 & 9,64 & 0 & N/A \\ \hline
+			2 & 8,93 & 51,6  & 1,48 \\ \hline
+			3 & 8,71 & 92,8  & 1,09 \\ \hline
+		\end{tabular}
+	\end{table}
+
+	Z aritmetično sredino izračunamo $\overline{\beta} = 1,29 \cdot 10^3 \text{ s}^{-1} \pm 0,2 \cdot 10^3 \text{ s}^{-1}$
 
 \newpage
 \section{Gostota zemljinega električnega polja}
-    \subsection*{Opis vaje in teoritična podlaga}
-    \subsection*{Uporabljeni pripomočki}
-    \subsection*{Grafi, ipd.}
-    \subsection*{Analiza rezultatov}
+	\subsection*{Opis vaje in teoritična podlaga}
+	\subsection*{Uporabljeni pripomočki}
+	\subsection*{Grafi, ipd.}
+	\subsection*{Analiza rezultatov}
 
 \newpage
 \section{Merjenje goriščne razdalje leč}
-    \subsection*{Opis vaje in teoritična podlaga}
-    Vaja zajema merjenje goriščne razdalje konveksne (zbiralne), konkavne (razpršilne) in 
-    stavljene leče. Formula za izračun goriščne razdalje leče je $f = 2R$, kjer je $f$ 
-    goriščna razdalja, $R$ pa polmer leče ali zrcala. Goriščna razdalja sestavljene leče
-    (dve zaporedni leči) se izračuna z $\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{d}{f_1 \cdot f_2}$
-    \cite{lece}, kjer sta $f_1$ in $f_2$ goriščni razdalji sestavnih leč, $d$ pa razdalja med njima.
+	\subsection*{Opis vaje in teoritična podlaga}
+	Vaja zajema merjenje goriščne razdalje konveksne (zbiralne), konkavne (razpršilne) in 
+	stavljene leče. Formula za izračun goriščne razdalje leče je $f = 2R$, kjer je $f$ 
+	goriščna razdalja, $R$ pa polmer leče ali zrcala. Goriščna razdalja sestavljene leče
+	(dve zaporedni leči) se izračuna z $\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{d}{f_1 \cdot f_2}$
+	\cite{lece}, kjer sta $f_1$ in $f_2$ goriščni razdalji sestavnih leč, $d$ pa razdalja med njima.
 
-    \subsection*{Uporabljeni pripomočki}
-    Svetilka v ohišju z režami, ŠMI z vezicami, milimeterski papir, svinčnik, geotrikotnik, 
-    konveksna in konkavna leča ($R = 35 \text{ mm}$ za obe leči)
-    \subsection*{Skice}
-    
-    %Zbiralna leča
-    \begin{figure}[h!]
-        \centering
-        \begin{tikzpicture}
-            \draw[black, very thick] (-6,-4.5) rectangle (9,4);
-            \draw[dash=on 2mm off 2mm phase -1mm] (-5, 0) -- (8, 0);
-                
-            %leča
-            \draw[very thick] (0, 3.5) arc (90:270:3.5);
-            \draw[very thick] (0, 3.5) -- (0, -3.5);
-            
-            %žarki
-            \draw[thick] (-5, 1.9) -- (-2.95, 1.9) -- (8, -0.9);
-            \draw[thick] (-5, -2.2) -- (-2.7, -2.2) -- (8, 1.25);
-            
-            %meritev
-            \draw (-3.5, 0) -- (-3.5, -4);
-            \draw (4.27, 0) -- (4.27, -4);
-            \draw[dimen] (-3.5, -4) -- (4.27, -4) node {$77 \text{ mm} \pm 0,5 \text{ mm}$};
-        \end{tikzpicture}
-        \caption{Zbiralna leča}
-    \end{figure}
-    
-    %Razpršilna leča
-    \begin{figure}[h!]
-        \centering
-        \begin{tikzpicture}
-            \draw[black, very thick] (-6,-4.5) rectangle (5, 3.5);
-            \draw[dash=on 2mm off 2mm phase -1mm] (-5, 0) -- (4, 0);
-            
-            %leča
-            \draw[very thick] (-2.48, 2.48) arc (135:225:3.5);
-            \draw[very thick] (-2.48, 2.48) -- (-4, 2.48) -- (-4, -2.48) -- (-2.48, -2.48);
-            
-            %žarki
-            \draw[thick] (4, 1.75) -- (-3.05, 1.75) -- (-5, 2.25);
-            \draw[thick] (4, -1.75) -- (-3.05, -1.75) -- (-5, -2.26);
-            \draw[thick, dash=on 1mm off 1mm phase 0mm] (-3.05, 1.75) -- (4, -0.05);
-            \draw[thick, dash=on 1mm off 1mm phase 0mm] (-3.05, -1.75) -- (4, 0.1);
-            
-            %meritev
-            \draw (-3.5, 0) -- (-3.5, -4);
-            \draw (3.7, 0) -- (3.7, -4);
-            \draw[dimen] (-3.5, -4) -- (3.7, -4) node {$72 \text{ mm} \pm 0,5 \text{ mm}$};
-        \end{tikzpicture}
-        \caption{Razpršilna leča}
-    \end{figure}
-    
-    %Sestavljena leča
-    \begin{figure}[h!]
-        \makebox[\textwidth][c]{
-            \begin{tikzpicture}
-                \draw[black, very thick] (-10,-4.5) rectangle (10, 3.5);
-                \draw[dash=on 2mm off 2mm phase -1mm] (-9, 0) -- (9, 0);
-                
-                %zibralna leča
-                \draw[very thick] (-6.5, 2.47) arc (135:225:3.5) -- (-6.1, -2.48) -- (-6.1, 2.47) -- (-6.5, 2.47);
-                
-                %razpršilna leča
-                \draw[very thick] (-3.13, -2.48) arc (-45:45:3.5) -- (-1.6, 2.47) -- (-1.6, -2.48) -- (-3.13, -2.48);
-                
-                %žarki
-                \draw[thick] (-9, 1.35) -- (-7.25, 1.35) -- (-2.15, 0.62) -- (9, 0.07);
-                \draw[thick] (-9, -1.35) -- (-7.25, -1.35) -- (-2.15, -0.62) -- (9, 0.13);
-                
-                %meritve
-                \draw (-7.53, 0) -- (-7.53, -4);
-                \draw (8.55, 0) -- (8.55, -4);
-                \draw[dimen] (-7.53, -4) -- (8.55, -4) node {$157 \text{ mm} \pm 0,5 \text{ mm}$};
-                \draw (-2.1, 0) -- (-2.1, -4);
-                \draw[dimen] (-7.53, -3.6) -- (-2.1, -3.6) node {$51 \text{ mm} \pm 0,5 \text{ mm}$};
-            \end{tikzpicture}
-            }
-        \caption{Sestavljena leča}
-    \end{figure}
-    \newpage
-    \subsection*{Analiza rezultatov}
-    Izmerjena goriščna razdalja konveksne leče je $f = 77 \text{ mm} \pm 0,5 \text{ mm}$,
-    izračunana razdalja pa je 
-    \begin{equation}
-        f = 2R = 2 \cdot 35 \text{ mm} = 70 \text{ mm}
-    \end{equation}.\\
-    Za konkavno lečo pa sem izmeril goriščno razdaljo $f = 72 \text{ mm} \pm 0,5 \text{ mm}$, 
-    izračunana goriščna razdalja je 
-    \begin{equation}
-        f = -2R = -2 \cdot 35 \text{ mm} = -70 \text{ mm}
-    \end{equation}.\\
-    Pri sestavljeni lečo sem izmeril goriščno razdaljo $f = 157 \text{ mm} \pm 0,5 \text{ mm}$,
-    izračunal pa sem
-    \begin{equation}
-        \begin{split}
-            \frac{1}{f} &= \frac{1}{f_1} + \frac{1}{f_2} - \frac{d}{f_1 \cdot f_2} \\
-            f &= (\frac{1}{-70 \text{ mm}} + \frac{1}{70 \text{ mm}} - \frac{51 \text{ mm}}{-70 \text{ mm} \cdot 70 \text{ mm}})^{-1}\\
-            f &= 102 \text{ mm}
-        \end{split}
-    \end{equation}
-    če za izračun uporabimo izmerjene vrednosti dobimo, da je goriščna razdalja $f = 120 \text{ mm}$.
-    Kljub vsemu osnovne formule za izračun goriščne razdalje sestavljene leče sam ne morem
-    potrditi.
+	\subsection*{Uporabljeni pripomočki}
+	Svetilka v ohišju z režami, ŠMI z žicami, milimeterski papir, svinčnik, geotrikotnik, 
+	konveksna in konkavna leča ($R = 35 \text{ mm}$ za obe leči)
+	\subsection*{Skice}
+	
+	%Zbiralna leča
+	\begin{figure}[h!]
+		\centering
+		\begin{tikzpicture}
+			\draw[black, very thick] (-6,-4.5) rectangle (9,4);
+			\draw[dash=on 2mm off 2mm phase -1mm] (-5, 0) -- (8, 0);
+				
+			%leča
+			\draw[very thick] (0, 3.5) arc (90:270:3.5);
+			\draw[very thick] (0, 3.5) -- (0, -3.5);
+			
+			%žarki
+			\draw[thick] (-5, 1.9) -- (-2.95, 1.9) -- (8, -0.9);
+			\draw[thick] (-5, -2.2) -- (-2.7, -2.2) -- (8, 1.25);
+			
+			%meritev
+			\draw (-3.5, 0) -- (-3.5, -4);
+			\draw (4.27, 0) -- (4.27, -4);
+			\draw[dimen] (-3.5, -4) -- (4.27, -4) node {$77 \text{ mm} \pm 0,5 \text{ mm}$};
+		\end{tikzpicture}
+		\caption{Zbiralna leča}
+	\end{figure}
+	
+	%Razpršilna leča
+	\begin{figure}[h!]
+		\centering
+		\begin{tikzpicture}
+			\draw[black, very thick] (-6,-4.5) rectangle (5, 3.5);
+			\draw[dash=on 2mm off 2mm phase -1mm] (-5, 0) -- (4, 0);
+			
+			%leča
+			\draw[very thick] (-2.48, 2.48) arc (135:225:3.5);
+			\draw[very thick] (-2.48, 2.48) -- (-4, 2.48) -- (-4, -2.48) -- (-2.48, -2.48);
+			
+			%žarki
+			\draw[thick] (4, 1.75) -- (-3.05, 1.75) -- (-5, 2.25);
+			\draw[thick] (4, -1.75) -- (-3.05, -1.75) -- (-5, -2.26);
+			\draw[thick, dash=on 1mm off 1mm phase 0mm] (-3.05, 1.75) -- (4, -0.05);
+			\draw[thick, dash=on 1mm off 1mm phase 0mm] (-3.05, -1.75) -- (4, 0.1);
+			
+			%meritev
+			\draw (-3.5, 0) -- (-3.5, -4);
+			\draw (3.7, 0) -- (3.7, -4);
+			\draw[dimen] (-3.5, -4) -- (3.7, -4) node {$72 \text{ mm} \pm 0,5 \text{ mm}$};
+		\end{tikzpicture}
+		\caption{Razpršilna leča}
+	\end{figure}
+	
+	%Sestavljena leča
+	\begin{figure}[h!]
+		\makebox[\textwidth][c]{
+			\begin{tikzpicture}
+				\draw[black, very thick] (-10,-4.5) rectangle (10, 3.5);
+				\draw[dash=on 2mm off 2mm phase -1mm] (-9, 0) -- (9, 0);
+				
+				%zibralna leča
+				\draw[very thick] (-6.5, 2.47) arc (135:225:3.5) -- (-6.1, -2.48) -- (-6.1, 2.47) -- (-6.5, 2.47);
+				
+				%razpršilna leča
+				\draw[very thick] (-3.13, -2.48) arc (-45:45:3.5) -- (-1.6, 2.47) -- (-1.6, -2.48) -- (-3.13, -2.48);
+				
+				%žarki
+				\draw[thick] (-9, 1.35) -- (-7.25, 1.35) -- (-2.15, 0.62) -- (9, 0.07);
+				\draw[thick] (-9, -1.35) -- (-7.25, -1.35) -- (-2.15, -0.62) -- (9, 0.13);
+				
+				%meritve
+				\draw (-7.53, 0) -- (-7.53, -4);
+				\draw (8.55, 0) -- (8.55, -4);
+				\draw[dimen] (-7.53, -4) -- (8.55, -4) node {$157 \text{ mm} \pm 0,5 \text{ mm}$};
+				\draw (-2.1, 0) -- (-2.1, -4);
+				\draw[dimen] (-7.53, -3.6) -- (-2.1, -3.6) node {$51 \text{ mm} \pm 0,5 \text{ mm}$};
+			\end{tikzpicture}
+			}
+		\caption{Sestavljena leča}
+	\end{figure}
+	\newpage
+	\subsection*{Analiza rezultatov}
+	Izmerjena goriščna razdalja konveksne leče je $f = 77 \text{ mm} \pm 0,5 \text{ mm}$,
+	izračunana razdalja pa je 
+	\begin{equation}
+		f = 2R = 2 \cdot 35 \text{ mm} = 70 \text{ mm}
+	\end{equation}.\\
+	Za konkavno lečo pa sem izmeril goriščno razdaljo $f = 72 \text{ mm} \pm 0,5 \text{ mm}$, 
+	izračunana goriščna razdalja je 
+	\begin{equation}
+		f = -2R = -2 \cdot 35 \text{ mm} = -70 \text{ mm}
+	\end{equation}.\\
+	Pri sestavljeni lečo sem izmeril goriščno razdaljo $f = 157 \text{ mm} \pm 0,5 \text{ mm}$,
+	izračunal pa sem
+	\begin{equation}
+		\begin{split}
+			\frac{1}{f} &= \frac{1}{f_1} + \frac{1}{f_2} - \frac{d}{f_1 \cdot f_2} \\
+			f &= (\frac{1}{-70 \text{ mm}} + \frac{1}{70 \text{ mm}} - \frac{51 \text{ mm}}{-70 \text{ mm} \cdot 70 \text{ mm}})^{-1}\\
+			f &= 102 \text{ mm}
+		\end{split}
+	\end{equation}
+	če za izračun uporabimo izmerjene vrednosti dobimo, da je goriščna razdalja $f = 120 \text{ mm}$.
+	Kljub vsemu osnovne formule za izračun goriščne razdalje sestavljene leče sam ne morem
+	potrditi.
 
 
 \newpage
 \section{Plinski emisijski spektri}
-    \subsection*{Opis vaje in teoritična podlaga}
-    \subsection*{Uporabljeni pripomočki}
-    \subsection*{Grafi, ipd.}
-    \subsection*{Analiza rezultatov}
+	\subsection*{Opis vaje in teoritična podlaga}
+	\subsection*{Uporabljeni pripomočki}
+	\subsection*{Grafi, ipd.}
+	\subsection*{Analiza rezultatov}
 
 
 
 \newpage
 \begingroup
 \makeatletter
-    \section{Viri in literatura}
-    \nocite{*}
-    \printbibliography[heading=none]
+	\section{Viri in literatura}
+	\nocite{*}
+	\printbibliography[heading=none]
 \makeatother
 \endgroup
 \newpage
 
 \begin{samepage}
-    \thispagestyle{empty}
-    \section*{Izjava o avtorstvu}
-    Izjavljam, da je seminarska naloga v celoti moje avtorsko delo, ki sem ga 
-    izdelal samostojno s pomočjo navedene literature in pod vodstvom mentorja.
+	\thispagestyle{empty}
+	\section*{Izjava o avtorstvu}
+	Izjavljam, da je seminarska naloga v celoti moje avtorsko delo, ki sem ga 
+	izdelal samostojno s pomočjo navedene literature in pod vodstvom mentorja.
 
-    \vfill
-    
-    \today \hfill Jaka Kovač
-    
-    \vspace{3 cm}
+	\vfill
+	
+	\today \hfill Jaka Kovač
+	
+	\vspace{3 cm}
 \end{samepage}
 
 \end{document}
