@@ -22,6 +22,7 @@
 \usepackage{tikz} 
 \usetikzlibrary{patterns}
 \usetikzlibrary{arrows}
+\usetikzlibrary{decorations.pathmorphing,patterns}
 \usepackage[european]{circuitikz}   % Električna vezja
 \usepackage{datetime}               % Datum
 % \usepackage[slovenian]{csquotes}
@@ -78,301 +79,397 @@ maxcitenames=1, mincitenames=1, sorting=nyt]{biblatex}   % Navajanje virov
 \begin{document}
 \pagenumbering{arabic}
 
-\begin{center}
-	\thispagestyle{empty}
-	\includegraphics[scale=1]{slike/logotip_vegova_leze_brezokvirja.png}
-	\\
-	\textbf{Vegova ulica 4, 1000 Ljubljana}
+% \begin{center}
+% 	\thispagestyle{empty}
+% 	\includegraphics[scale=1]{slike/logotip_vegova_leze_brezokvirja.png}
+% 	\\
+% 	\textbf{Vegova ulica 4, 1000 Ljubljana}
 
-	\vspace{\fill} 
-	Poročila vaj pri predmetu fizika
+% 	\vspace{\fill} 
+% 	Poročila vaj pri predmetu fizika
 
-	\Huge{\textbf{Poročila maturitetnih vaj}}
+% 	\Huge{\textbf{Poročila maturitetnih vaj}}
 
-	\normalsize
-	\vspace{\fill}
+% 	\normalsize
+% 	\vspace{\fill}
 
-	Mentor: Tomo Omahna, prof. \hfill Avtor: Jaka Kovač, G 4. b\\
-	\null
-	Ljubljana, oktober 2023 – \MMYYYYdate\today %zamenjaj <mesec in leto> z mesecem in letom začetka
-\end{center}
-\newpage
-\thispagestyle{empty}
-\null
-\newpage
+% 	Mentor: Tomo Omahna, prof. \hfill Avtor: Jaka Kovač, G 4. b\\
+% 	\null
+% 	Ljubljana, oktober 2023 – \MMYYYYdate\today %zamenjaj <mesec in leto> z mesecem in letom začetka
+% \end{center}
+% \newpage
+% \thispagestyle{empty}
+% \null
+% \newpage
 
-\section*{Povzetek}
-V tem delu bom predstavil kako sem izvedel maturitene vaje, njihove rezultate. Ob vsaki vaji
-sem preverjal veljavnost meritev s teoretično izračunaimi vrednostmi.
-\\ %prazna vrstica
-\textbf{Ključe besede:} poročila maturitetnih vaj - fizika, fizika za srednjo šolo
+% \section*{Povzetek}
+% V tem delu bom predstavil kako sem izvedel maturitene vaje, njihove rezultate. Ob vsaki vaji
+% sem preverjal veljavnost meritev s teoretično izračunaimi vrednostmi.
+% \\ %prazna vrstica
+% \textbf{Ključe besede:} poročila maturitetnih vaj - fizika, fizika za srednjo šolo
 
-\vfill
-\section*{Abstract}
-\foreignlanguage{english}{This paper describes how to use \LaTeX{} to write a paper.
-\\ %prazna vrstica
-\textbf{Keywords:} \LaTeX{}, paper, \LaTeX{} template}
-\vfill
+% \vfill
+% \section*{Abstract}
+% \foreignlanguage{english}{This paper describes how to use \LaTeX{} to write a paper.
+% \\ %prazna vrstica
+% \textbf{Keywords:} \LaTeX{}, paper, \LaTeX{} template}
+% \vfill
 
-% KAZALO 
-\newpage
-\thispagestyle{empty} % ne številčimo strani
-\tableofcontents % kazalo
+% % KAZALO 
+% \newpage
+% \thispagestyle{empty} % ne številčimo strani
+% \tableofcontents % kazalo
 
-\begingroup     % kazalo slik
-\makeatletter
-\section*{Slike}
-\@starttoc{lof}
-\let\clearpage\relax
-\makeatother
-\endgroup
+% \begingroup     % kazalo slik
+% \makeatletter
+% \section*{Slike}
+% \@starttoc{lof}
+% \let\clearpage\relax
+% \makeatother
+% \endgroup
 
 
-\newpage
+% \newpage
 
 \section*{O zapisu meritev}
 Prikazane številčne vrednosti so zaokrožene na 3 od 0 različna decimalna mesta (znanstven zapis).
 V izračunih se uporablja dejanska vrednost. Kjer ni drugače navedeno je vrednost podana na
 $\pm 0.5$ enot na zadnjem prikazanem mestu. Primer: $s = 10.0 \text{ m} = 10.0 \text{ m} \pm 0.05 \text{ m}$
 
-\section{Lastno nihanje vzmetnega nihala}
-	\subsection*{Opis vaje in teoritična podlaga}
-	\subsection*{Uporabljeni pripomočki}
-	\subsection*{Grafi, ipd.}
-	\subsection*{Analiza rezultatov}
+%! \section{Lastno nihanje vzmetnega nihala}  --- NOT DONE
+% 	\subsection*{Opis vaje in teoritična podlaga}
+% 	Nihanje količine $x$ lahko zapišemo z enačbo nihanja
+% 	\begin{equation}
+% 		\frac{d^2 x}{dt^2} + \omega_0^2 x =0 .
+% 	\end{equation}
 
-\newpage
-\section{Prosti pad}
-	\subsection*{Opis vaje in teoritična podlaga}
-	\subsection*{Uporabljeni pripomočki}
-	\subsection*{Grafi, ipd.}
-	\subsection*{Analiza rezultatov}
+% 	\begin{figure}[h!]
+% 		\centering
+% 		\begin{tikzpicture}
+% 			\draw[black, very thick] (-5, -5) rectangle (5, 5);
+% 			\draw[black, thick] (-0.5, -3) rectangle (0.5, -1);
+% 			\draw[thick,decoration={aspect=.6, segment length=3mm,coil, amplitude=.2cm, pre length = .5cm, post length = .5cm},decorate] (0, -1) -- (0, 4);
+% 			\draw[black, very thick] (-4, 4) -- (4, 4);
+% 			\fill[pattern=north east lines] (-4, 4) rectangle (4, 4.5); 
+% 			\draw[black, fill=black] (0, -2) circle (.5mm);
+% 			\draw[black, ultra thick, ->] (0, -2) -- (0, -2.8) node[pos=0.5, right, xshift=.5cm] {$m\cdot a$};
+% 			\draw[black, ultra thick, ->] (0, -2) -- (0, -1.2) node[pos=0.5, right, xshift=.5cm] {$F_v$};
+% 		\end{tikzpicture}
+% 	\end{figure}
 
-\newpage
-\section{Odbojnost}
-	\subsection*{Opis vaje in teoritična podlaga}
-	\subsection*{Uporabljeni pripomočki}
-	\subsection*{Grafi, ipd.}
-	\subsection*{Analiza rezultatov}
+% 	V našem primeru želimo preveriti sinusno nihanje vzmetnega nihala.
+% 	Hookov zakon pravi, da je $F_v = -ks$, po II. Newtonovem zakonu pa lahko zapišemo 
+% 	\begin{equation}
+% 		F_v = ma = -ks = m \frac{d^2 x}{dt^2} .
+% 	\end{equation}
+% 	Rešitev dane diferencialne enačbe je
+% 	\begin{equation}
+% 		x(t) = x_{max} \sin(\omega t + \varphi); \omega = \sqrt{\frac k m} \land \varphi = \arcsin(\frac{x(0)}{x_{max}}).
+% 	\end{equation}
+% 	\newpage
+	
+	
 
-\newpage
-\section{Boylov zakon}
-	\subsection*{Opis vaje in teoritična podlaga}
-	\subsection*{Uporabljeni pripomočki}
-	\subsection*{Grafi, ipd.}
-	\subsection*{Analiza rezultatov}
+% 	\subsection*{Uporabljeni pripomočki}
+% 	\subsection*{Grafi, ipd.}
+% 	\subsection*{Analiza rezultatov}
 
-\newpage
-\section{Atwoodovo padalo}
-	\subsection*{Opis vaje in teoritična podlaga}
-	\subsection*{Uporabljeni pripomočki}
-	\subsection*{Grafi, ipd.}
-	\subsection*{Analiza rezultatov}
+% \newpage
+%TODO \section{Prosti pad}
+% 	\subsection*{Opis vaje in teoritična podlaga}
+% 	\subsection*{Uporabljeni pripomočki}
+% 	\subsection*{Grafi, ipd.}
+% 	\subsection*{Analiza rezultatov}
 
-\newpage
-\section{Dušeno nihanje v električnem krogu}
-	\subsection*{Opis vaje in teoritična podlaga}
-	Cilj vaje je izračunati koeficient dušenja $\beta$ v dušemen električnem nihajenm krogu.
-	Začnimo z enačbo dušenega nihanja \cite{nihanje}
-	\begin{equation}
-		\frac{d^2 x}{dt^2} + 2\beta\frac{dx}{dt} + \omega_0^2 x =0 .
-	\end{equation}
-	V danem nihanjem krogu lahko z II. Kirchoffovim zakonom zapišemo
-	\begin{equation}
-		U - L\frac{dI}{dt} - RI = 0.
-		\label{kirchoff}
-	\end{equation}
-	Tok v vezju lahko izračunamo z 
-	\begin{equation}
-		I = -\frac{de}{dt} = -\frac{d(CU)}{dt} = -C \frac{dU}{dt},
-	\end{equation} ko tok vstavimo v enačbo \ref{kirchoff} dobimo
-	\begin{equation}
-		\begin{split}
-			U + LC \frac{d^2U}{dt^2} + RC \frac{dU}{dt} = 0 \\
-			LC \frac{d^2U}{dt^2} + RC \frac{dU}{dt} + U = 0,
-		\end{split}
-	\end{equation} če enačbo delimo z $LC$ pri tem pa upoštevamo $LC = \frac{1}{\omega_0^2}$ 
-	lahko zapišemo
-	\begin{equation}
-		\frac{d^2U}{dt^2} + \frac{R}{L} \frac{dU}{dt} + \omega_0^2U = 0
-	\end{equation} iz česar sledi, da je $x = U$ in $2\beta = \frac{R}{L}$ v enačbi dušenega
-	nihanja. 
-	Zapišemo lahko \cite{vaje}
-	\begin{equation}
-		U = e^{-\beta t}[A sin(\omega t) + B cos(\omega t)]
-	\end{equation} kjer je $\omega = \sqrt[2]{\omega_0^2  - \beta^2}$ in $\beta = \frac{R}{2L}$.
-	Ker poznamo začetne pogoje $(\frac{dU}{dt})_0 = - \frac{I_0}{C}$ in $U_0 = I_0 R$ lahko
-	zapišemo končno enačbo za napetost
-	\begin{equation}
-		U = U_0 \cdot e^{-\beta t} sin(\omega t).
-	\end{equation}
-	\subsection*{Uporabljeni pripomočki}
-	Digitalni osciloskop, nihajni krog z elektrosnikim stikalom, ŠMI z žicami
+% \newpage
+%TODO \section{Odbojnost}
+% 	\subsection*{Opis vaje in teoritična podlaga}
+% 	\subsection*{Uporabljeni pripomočki}
+% 	\subsection*{Grafi, ipd.}
+% 	\subsection*{Analiza rezultatov}
 
-	\newpage
-	\subsection*{Posnetek zaslona osciloskopa}
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=\linewidth]{slike/1.png} 
-		\caption{Posnetek zaslona osciloskopa z meritvami časa pozameznega iznihaja}
-	\end{figure}
+% \newpage
+%TODO \section{Boylov zakon}
+% 	\subsection*{Opis vaje in teoritična podlaga}
+% 	\subsection*{Uporabljeni pripomočki}
+% 	\subsection*{Grafi, ipd.}
+% 	\subsection*{Analiza rezultatov}
 
-	\subsection*{Analiza rezultatov}
-	Za (maksimalno) napetost vsakega pulza lahko zapišemo enačbo 
-	\begin{equation}
-		U_N = U_0 e^{-\beta ((N-1)t_0 + t_z)}, \footnote{Za $U_1$ zapišemo $U_1 = U_0 e^{-\beta t_z}$}
-	\end{equation} ker govorimo o maksimalni napetosti upoštevamo, da je $sin(\omega t) = 1$.
-	$\beta$ lahko izrazimo takole
-	\begin{equation}
-		\begin{split}
-			ln(\frac{U_1}{U_N}) = \beta (N-1) t_0 \\
-			\beta = \frac{ln(\frac{U_1}{U_N})}{(N-1) t_0}.
-		\end{split}
-	\end{equation}
+% \newpage
+%TODO \section{Atwoodovo padalo}
+% 	\subsection*{Opis vaje in teoritična podlaga}
+% 	\subsection*{Uporabljeni pripomočki}
+% 	\subsection*{Grafi, ipd.}
+% 	\subsection*{Analiza rezultatov}
+
+% \newpage
+%* \section{Dušeno nihanje v električnem krogu}
+% 	\subsection*{Opis vaje in teoritična podlaga}
+% 	Cilj vaje je izračunati koeficient dušenja $\beta$ v dušemen električnem nihajenm krogu.
+% 	Začnimo z enačbo dušenega nihanja \cite{nihanje}
+% 	\begin{equation}
+% 		\frac{d^2 x}{dt^2} + 2\beta\frac{dx}{dt} + \omega_0^2 x =0 .
+% 	\end{equation}
+% 	V danem nihanjem krogu lahko z II. Kirchoffovim zakonom zapišemo
+% 	\begin{equation}
+% 		U - L\frac{dI}{dt} - RI = 0.
+% 		\label{kirchoff}
+% 	\end{equation}
+% 	Tok v vezju lahko izračunamo z 
+% 	\begin{equation}
+% 		I = -\frac{de}{dt} = -\frac{d(CU)}{dt} = -C \frac{dU}{dt},
+% 	\end{equation} ko tok vstavimo v enačbo \ref{kirchoff} dobimo
+% 	\begin{equation}
+% 		\begin{split}
+% 			U + LC \frac{d^2U}{dt^2} + RC \frac{dU}{dt} = 0 \\
+% 			LC \frac{d^2U}{dt^2} + RC \frac{dU}{dt} + U = 0,
+% 		\end{split}
+% 	\end{equation} če enačbo delimo z $LC$ pri tem pa upoštevamo $LC = \frac{1}{\omega_0^2}$ 
+% 	lahko zapišemo
+% 	\begin{equation}
+% 		\frac{d^2U}{dt^2} + \frac{R}{L} \frac{dU}{dt} + \omega_0^2U = 0
+% 	\end{equation} iz česar sledi, da je $x = U$ in $2\beta = \frac{R}{L}$ v enačbi dušenega
+% 	nihanja. 
+% 	Zapišemo lahko \cite{vaje}
+% 	\begin{equation}
+% 		U = e^{-\beta t}[A \sin(\omega t) + B \cos(\omega t)]
+% 	\end{equation} kjer je $\omega = \sqrt[2]{\omega_0^2  - \beta^2}$ in $\beta = \frac{R}{2L}$.
+% 	Ker poznamo začetne pogoje $(\frac{dU}{dt})_0 = - \frac{I_0}{C}$ in $U_0 = I_0 R$ lahko
+% 	zapišemo končno enačbo za napetost
+% 	\begin{equation}
+% 		U = U_0 \cdot e^{-\beta t} \sin(\omega t).
+% 	\end{equation}
+% 	\subsection*{Uporabljeni pripomočki}
+% 	Digitalni osciloskop, nihajni krog z elektrosnikim stikalom, ŠMI z žicami
+
+% 	\newpage
+% 	\subsection*{Posnetek zaslona osciloskopa}
+% 	\begin{figure}[h!]
+% 		\centering
+% 		\includegraphics[width=\linewidth]{slike/1.png} 
+% 		\caption{Posnetek zaslona osciloskopa z meritvami časa pozameznega iznihaja}
+% 	\end{figure}
+
+% 	\subsection*{Analiza rezultatov}
+% 	Za (maksimalno) napetost vsakega pulza lahko zapišemo enačbo 
+% 	\begin{equation}
+% 		U_N = U_0 e^{-\beta ((N-1)t_0 + t_z)}, \footnote{Za $U_1$ zapišemo $U_1 = U_0 e^{-\beta t_z}$}
+% 	\end{equation} ker govorimo o maksimalni napetosti upoštevamo, da je $sin(\omega t) = 1$.
+% 	$\beta$ lahko izrazimo takole
+% 	\begin{equation}
+% 		\begin{split}
+% 			ln(\frac{U_1}{U_N}) = \beta (N-1) t_0 \\
+% 			\beta = \frac{ln(\frac{U_1}{U_N})}{(N-1) t_0}.
+% 		\end{split}
+% 	\end{equation}
 	
 
 
-	\begin{table}[h!]
-		\centering
-		\begin{tabular}{|c|c|c|c|}
-			\hline
-			$N$ & $U_n$ [V] & $(N-1)t_0$ [$\mu$ s] & $\beta$ [$10^3 \text{ s}^{-1}$] \\ \hline
-			1 & 9,64 & 0 & N/A \\ \hline
-			2 & 8,93 & 51,6  & 1,48 \\ \hline
-			3 & 8,71 & 92,8  & 1,09 \\ \hline
-		\end{tabular}
-	\end{table}
+% 	\begin{table}[h!]
+% 		\centering
+% 		\begin{tabular}{|c|c|c|c|}
+% 			\hline
+% 			$N$ & $U_n$ [V] & $(N-1)t_0$ [$\mu$ s] & $\beta$ [$10^3 \text{ s}^{-1}$] \\ \hline
+% 			1 & 9,64 & 0 & N/A \\ \hline
+% 			2 & 8,93 & 51,6  & 1,48 \\ \hline
+% 			3 & 8,71 & 92,8  & 1,09 \\ \hline
+% 		\end{tabular}
+% 	\end{table}
 
-	Z aritmetično sredino izračunamo $\overline{\beta} = 1,29 \cdot 10^3 \text{ s}^{-1} \pm 0,2 \cdot 10^3 \text{ s}^{-1}$
+% 	Z aritmetično sredino izračunamo $\overline{\beta} = 1,29 \cdot 10^3 \text{ s}^{-1} \pm 0,2 \cdot 10^3 \text{ s}^{-1}$
 
-\newpage
-\section{Gostota zemljinega električnega polja}
-	\subsection*{Opis vaje in teoritična podlaga}
-	\subsection*{Uporabljeni pripomočki}
-	\subsection*{Grafi, ipd.}
-	\subsection*{Analiza rezultatov}
+% \newpage
+%* \section{Gostota zemljinega električnega polja}
+% 	\subsection*{Opis vaje in teoritična podlaga}
+% 	Zemljino magnetno polje deluje na podoben način kot magneti, ki jih poznamo iz vsakdanjega 
+% 	življenja, le da na veliko večjem obsegu. Ko elektroni tečejo skozi žico, ustvarijo 
+% 	magnetno polje okoli nje. Ta pojav je prisoten tudi na atomskem nivoju, kjer elektroni
+% 	krožijo okoli atomov ustvarjajoč majhne tokove in s tem majhna magnetna polja. V
+% 	nekaterih atomih, kot so atomi železa, se ta majhna magentna polja seštevajo in tvorijo
+% 	močnejše magnetno polje. Ta princip je razširljiv vse do obsega Zemlje, kjer gibanje
+% 	tekočega železa v zunanjem jedru, segretem s strani (vročega) notranjega jedra, ustvarja
+% 	konvekcijske tokove. Ti tokovi, skupaj z učinkom Coriolisove sile, ki je posledica
+% 	vrtenja Zemlje, povzročajo, da se tekoče kovinske mase vrtinčijo in ustvarjajo velikansko
+% 	elektromagnetno polje, ki obdaja naš planet. \\
 
-\newpage
-\section{Merjenje goriščne razdalje leč}
-	\subsection*{Opis vaje in teoritična podlaga}
-	Vaja zajema merjenje goriščne razdalje konveksne (zbiralne), konkavne (razpršilne) in 
-	stavljene leče. Formula za izračun goriščne razdalje leče je $f = 2R$, kjer je $f$ 
-	goriščna razdalja, $R$ pa polmer leče ali zrcala. Goriščna razdalja sestavljene leče
-	(dve zaporedni leči) se izračuna z $\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{d}{f_1 \cdot f_2}$
-	\cite{lece}, kjer sta $f_1$ in $f_2$ goriščni razdalji sestavnih leč, $d$ pa razdalja med njima.
+% 	Kompas nam pokaže smer ''silnic'' \footnote{Kompas se sicer usmeri v smer magnetnega polja,
+% 	magnetna sila deluje pravokotno na smer magetnega polja, za lažjo razlago bom tu napačno
+% 	uporabil izraz silnice, ki sicer pomeni smer delovanja sile} magnetnega polja, to "funkcijo"
+% 	lahko izrabimo za izračun moči magnetnega polja Zemlje. Če s tuljavo ustvarimo magnetno
+% 	polje, ki je pravokotno na zemljino lahko s kompasom določimo, kdaj sta magnetno polje
+% 	Zemlje in tuljave enaka.
+% 	\begin{figure}[h!]
+% 		\centering
+% 		\begin{tikzpicture}
+% 			\draw[black, very thick] (-3,-3) rectangle (4,3);
+% 			\draw[black, ultra thick, ->] (-2, -2) -- (3, -2) node at (2, -2.4) {$B_{tuljave}$};
+% 			\draw[black, ultra thick, ->] (-2, -2) -- (3, 2) node at (2.5, 0.75) {$B_{skupen}$};
+% 			\draw[black, ultra thick, ->] (-2, -2) -- (-2, 2) node at (-1.25, 1) {$B_{zemlje}$};
+% 		\end{tikzpicture}
+% 		\caption{Trikotnik magnetnh polj}
+% 	\end{figure}
 
-	\subsection*{Uporabljeni pripomočki}
-	Svetilka v ohišju z režami, ŠMI z žicami, milimeterski papir, svinčnik, geotrikotnik, 
-	konveksna in konkavna leča ($R = 35 \text{ mm}$ za obe leči)
-	\subsection*{Skice}
+% 	Ker kompas kaže ($\varphi_k$) v smer skupnega magnetnega polja
+% 	($\vec{B_{skupen}} = \vec{B_{zemlje}} + \vec{B_{tuljave}}$), lahko zapišemo
+% 	\begin{equation}
+% 		\tan(\varphi_k) = \frac{B_{tuljave}}{B_{zemlje}} .
+% 	\end{equation}
+% 	Če s tuljavo ustvarimo magnetno polje, ki je po velikosti enako Zemljinemu magnetnemu
+% 	polju, bo $\tan(\varphi_k) = 1 \Rightarrow \varphi_k = \arctan(1) = 45 \text{ °}$.
+
+% 	\subsection*{Uporabljeni pripomočki}
+% 	Dve tuljavi ($r_{sr} = 7 cm$), kompas, upor ($R = 1 \text{ k}\Omega$), ŠMI z žicami in
+% 	ampermeter
+% 	\subsection*{Tabela meritev}
+% 	\begin{table}[h!]
+% 		\centering
+% 		\begin{tabular}{|c|c|c|c|c|}
+% 		\hline
+% 		$I$ [mA] & $\varphi$ [°] & $B_{Helm}$ [$\mu$T] & $B_{zeml}$ [$\mu$T] & $\Delta B_{zeml}$ [$\mu$T] \\ \hline
+% 		0.00     & 0.00          & 0.00                   &                        &                               \\ \hline
+% 		1.65     & 25.00         & 19.01                  & 40.76                  & 13.58                         \\ \hline
+% 		2.30     & 30.00         & 26.50                  & 45.89                  & 8.45                          \\ \hline
+% 		3.77     & 42.00         & 43.43                  & 48.23                  & 6.11                          \\ \hline
+% 		5.80     & 53.00         & 66.82                  & 50.35                  & 3.99                          \\ \hline
+% 		7.59     & 58.00         & 87.44                  & 54.64                  & 0.30                          \\ \hline
+% 		8.00     & 60.00         & 92.16                  & 53.21                  & 1.13                          \\ \hline
+% 		9.57     & 62.00         & 110.25                 & 58.62                  & 4.28                          \\ \hline
+% 		19.80    & 70.00         & 228.10                 & 83.02                  & 28.68                         \\ \hline
+% 		\end{tabular}
+% 		\caption{Tabela meritev zemljinega magnetnega polja}
+% 	\end{table}
+% 	\subsection*{Analiza rezultatov}
+% 	Ker smo uporabili Helmholtzovo tuljavo, bomo $B_{tuljave}$ označili z $B_{Helm}$, ker 
+% 	poznamo dolžino tuljave in število ovojev, lahko izračunamo magnento polje, ki jo ustvari
+% 	\begin{equation}
+% 		B = \mu_0 \frac{NI}{l}.
+% 	\end{equation}
+
+% 	Izračunana vrednot magnetnega polja Zemlje je $B = 54,3 \cdot 10^-6 \text{ T} (1 \pm 0.09)$,
+% 	kar je le 12 \% več od vrednosti, ki sem jo našel na internetu \cite{noaa} ($B = 48,3 \text{ } \mu \text{T} $)
+% 	\footnote{Vrednost za Ljubljano, 15. 11. 2023}
+
+% \newpage
+%* \section{Merjenje goriščne razdalje leč}
+% 	\subsection*{Opis vaje in teoritična podlaga}
+% 	Vaja zajema merjenje goriščne razdalje konveksne (zbiralne), konkavne (razpršilne) in 
+% 	stavljene leče. Formula za izračun goriščne razdalje leče je $f = 2R$, kjer je $f$ 
+% 	goriščna razdalja, $R$ pa polmer leče ali zrcala. Goriščna razdalja sestavljene leče
+% 	(dve zaporedni leči) se izračuna z $\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{d}{f_1 \cdot f_2}$
+% 	\cite{lece}, kjer sta $f_1$ in $f_2$ goriščni razdalji sestavnih leč, $d$ pa razdalja med njima.
+
+% 	\subsection*{Uporabljeni pripomočki}
+% 	Svetilka v ohišju z režami, ŠMI z žicami, milimeterski papir, svinčnik, geotrikotnik, 
+% 	konveksna in konkavna leča ($R = 35 \text{ mm}$ za obe leči)
+% 	\subsection*{Skice}
 	
-	%Zbiralna leča
-	\begin{figure}[h!]
-		\centering
-		\begin{tikzpicture}
-			\draw[black, very thick] (-6,-4.5) rectangle (9,4);
-			\draw[dash=on 2mm off 2mm phase -1mm] (-5, 0) -- (8, 0);
+% 	%Zbiralna leča
+% 	\begin{figure}[h!]
+% 		\centering
+% 		\begin{tikzpicture}
+% 			\draw[black, very thick] (-6,-4.5) rectangle (9,4);
+% 			\draw[dash=on 2mm off 2mm phase -1mm] (-5, 0) -- (8, 0);
 				
-			%leča
-			\draw[very thick] (0, 3.5) arc (90:270:3.5);
-			\draw[very thick] (0, 3.5) -- (0, -3.5);
+% 			%leča
+% 			\draw[very thick] (0, 3.5) arc (90:270:3.5);
+% 			\draw[very thick] (0, 3.5) -- (0, -3.5);
 			
-			%žarki
-			\draw[thick] (-5, 1.9) -- (-2.95, 1.9) -- (8, -0.9);
-			\draw[thick] (-5, -2.2) -- (-2.7, -2.2) -- (8, 1.25);
+% 			%žarki
+% 			\draw[thick] (-5, 1.9) -- (-2.95, 1.9) -- (8, -0.9);
+% 			\draw[thick] (-5, -2.2) -- (-2.7, -2.2) -- (8, 1.25);
 			
-			%meritev
-			\draw (-3.5, 0) -- (-3.5, -4);
-			\draw (4.27, 0) -- (4.27, -4);
-			\draw[dimen] (-3.5, -4) -- (4.27, -4) node {$77 \text{ mm} \pm 0,5 \text{ mm}$};
-		\end{tikzpicture}
-		\caption{Zbiralna leča}
-	\end{figure}
+% 			%meritev
+% 			\draw (-3.5, 0) -- (-3.5, -4);
+% 			\draw (4.27, 0) -- (4.27, -4);
+% 			\draw[dimen] (-3.5, -4) -- (4.27, -4) node {$77 \text{ mm} \pm 0,5 \text{ mm}$};
+% 		\end{tikzpicture}
+% 		\caption{Zbiralna leča}
+% 	\end{figure}
 	
-	%Razpršilna leča
-	\begin{figure}[h!]
-		\centering
-		\begin{tikzpicture}
-			\draw[black, very thick] (-6,-4.5) rectangle (5, 3.5);
-			\draw[dash=on 2mm off 2mm phase -1mm] (-5, 0) -- (4, 0);
+% 	%Razpršilna leča
+% 	\begin{figure}[h!]
+% 		\centering
+% 		\begin{tikzpicture}
+% 			\draw[black, very thick] (-6,-4.5) rectangle (5, 3.5);
+% 			\draw[dash=on 2mm off 2mm phase -1mm] (-5, 0) -- (4, 0);
 			
-			%leča
-			\draw[very thick] (-2.48, 2.48) arc (135:225:3.5);
-			\draw[very thick] (-2.48, 2.48) -- (-4, 2.48) -- (-4, -2.48) -- (-2.48, -2.48);
+% 			%leča
+% 			\draw[very thick] (-2.48, 2.48) arc (135:225:3.5);
+% 			\draw[very thick] (-2.48, 2.48) -- (-4, 2.48) -- (-4, -2.48) -- (-2.48, -2.48);
 			
-			%žarki
-			\draw[thick] (4, 1.75) -- (-3.05, 1.75) -- (-5, 2.25);
-			\draw[thick] (4, -1.75) -- (-3.05, -1.75) -- (-5, -2.26);
-			\draw[thick, dash=on 1mm off 1mm phase 0mm] (-3.05, 1.75) -- (4, -0.05);
-			\draw[thick, dash=on 1mm off 1mm phase 0mm] (-3.05, -1.75) -- (4, 0.1);
+% 			%žarki
+% 			\draw[thick] (4, 1.75) -- (-3.05, 1.75) -- (-5, 2.25);
+% 			\draw[thick] (4, -1.75) -- (-3.05, -1.75) -- (-5, -2.26);
+% 			\draw[thick, dash=on 1mm off 1mm phase 0mm] (-3.05, 1.75) -- (4, -0.05);
+% 			\draw[thick, dash=on 1mm off 1mm phase 0mm] (-3.05, -1.75) -- (4, 0.1);
 			
-			%meritev
-			\draw (-3.5, 0) -- (-3.5, -4);
-			\draw (3.7, 0) -- (3.7, -4);
-			\draw[dimen] (-3.5, -4) -- (3.7, -4) node {$72 \text{ mm} \pm 0,5 \text{ mm}$};
-		\end{tikzpicture}
-		\caption{Razpršilna leča}
-	\end{figure}
+% 			%meritev
+% 			\draw (-3.5, 0) -- (-3.5, -4);
+% 			\draw (3.7, 0) -- (3.7, -4);
+% 			\draw[dimen] (-3.5, -4) -- (3.7, -4) node {$72 \text{ mm} \pm 0,5 \text{ mm}$};
+% 		\end{tikzpicture}
+% 		\caption{Razpršilna leča}
+% 	\end{figure}
 	
-	%Sestavljena leča
-	\begin{figure}[h!]
-		\makebox[\textwidth][c]{
-			\begin{tikzpicture}
-				\draw[black, very thick] (-10,-4.5) rectangle (10, 3.5);
-				\draw[dash=on 2mm off 2mm phase -1mm] (-9, 0) -- (9, 0);
+% 	%Sestavljena leča
+% 	\begin{figure}[h!]
+% 		\makebox[\textwidth][c]{
+% 			\begin{tikzpicture}
+% 				\draw[black, very thick] (-10,-4.5) rectangle (10, 3.5);
+% 				\draw[dash=on 2mm off 2mm phase -1mm] (-9, 0) -- (9, 0);
 				
-				%zibralna leča
-				\draw[very thick] (-6.5, 2.47) arc (135:225:3.5) -- (-6.1, -2.48) -- (-6.1, 2.47) -- (-6.5, 2.47);
+% 				%zibralna leča
+% 				\draw[very thick] (-6.5, 2.47) arc (135:225:3.5) -- (-6.1, -2.48) -- (-6.1, 2.47) -- (-6.5, 2.47);
 				
-				%razpršilna leča
-				\draw[very thick] (-3.13, -2.48) arc (-45:45:3.5) -- (-1.6, 2.47) -- (-1.6, -2.48) -- (-3.13, -2.48);
+% 				%razpršilna leča
+% 				\draw[very thick] (-3.13, -2.48) arc (-45:45:3.5) -- (-1.6, 2.47) -- (-1.6, -2.48) -- (-3.13, -2.48);
 				
-				%žarki
-				\draw[thick] (-9, 1.35) -- (-7.25, 1.35) -- (-2.15, 0.62) -- (9, 0.07);
-				\draw[thick] (-9, -1.35) -- (-7.25, -1.35) -- (-2.15, -0.62) -- (9, 0.13);
+% 				%žarki
+% 				\draw[thick] (-9, 1.35) -- (-7.25, 1.35) -- (-2.15, 0.62) -- (9, 0.07);
+% 				\draw[thick] (-9, -1.35) -- (-7.25, -1.35) -- (-2.15, -0.62) -- (9, 0.13);
 				
-				%meritve
-				\draw (-7.53, 0) -- (-7.53, -4);
-				\draw (8.55, 0) -- (8.55, -4);
-				\draw[dimen] (-7.53, -4) -- (8.55, -4) node {$157 \text{ mm} \pm 0,5 \text{ mm}$};
-				\draw (-2.1, 0) -- (-2.1, -4);
-				\draw[dimen] (-7.53, -3.6) -- (-2.1, -3.6) node {$51 \text{ mm} \pm 0,5 \text{ mm}$};
-			\end{tikzpicture}
-			}
-		\caption{Sestavljena leča}
-	\end{figure}
-	\newpage
-	\subsection*{Analiza rezultatov}
-	Izmerjena goriščna razdalja konveksne leče je $f = 77 \text{ mm} \pm 0,5 \text{ mm}$,
-	izračunana razdalja pa je 
-	\begin{equation}
-		f = 2R = 2 \cdot 35 \text{ mm} = 70 \text{ mm}
-	\end{equation}.\\
-	Za konkavno lečo pa sem izmeril goriščno razdaljo $f = 72 \text{ mm} \pm 0,5 \text{ mm}$, 
-	izračunana goriščna razdalja je 
-	\begin{equation}
-		f = -2R = -2 \cdot 35 \text{ mm} = -70 \text{ mm}
-	\end{equation}.\\
-	Pri sestavljeni lečo sem izmeril goriščno razdaljo $f = 157 \text{ mm} \pm 0,5 \text{ mm}$,
-	izračunal pa sem
-	\begin{equation}
-		\begin{split}
-			\frac{1}{f} &= \frac{1}{f_1} + \frac{1}{f_2} - \frac{d}{f_1 \cdot f_2} \\
-			f &= (\frac{1}{-70 \text{ mm}} + \frac{1}{70 \text{ mm}} - \frac{51 \text{ mm}}{-70 \text{ mm} \cdot 70 \text{ mm}})^{-1}\\
-			f &= 102 \text{ mm}
-		\end{split}
-	\end{equation}
-	če za izračun uporabimo izmerjene vrednosti dobimo, da je goriščna razdalja $f = 120 \text{ mm}$.
-	Kljub vsemu osnovne formule za izračun goriščne razdalje sestavljene leče sam ne morem
-	potrditi.
+% 				%meritve
+% 				\draw (-7.53, 0) -- (-7.53, -4);
+% 				\draw (8.55, 0) -- (8.55, -4);
+% 				\draw[dimen] (-7.53, -4) -- (8.55, -4) node {$157 \text{ mm} \pm 0,5 \text{ mm}$};
+% 				\draw (-2.1, 0) -- (-2.1, -4);
+% 				\draw[dimen] (-7.53, -3.6) -- (-2.1, -3.6) node {$51 \text{ mm} \pm 0,5 \text{ mm}$};
+% 			\end{tikzpicture}
+% 			}
+% 		\caption{Sestavljena leča}
+% 	\end{figure}
+% 	\newpage
+% 	\subsection*{Analiza rezultatov}
+% 	Izmerjena goriščna razdalja konveksne leče je $f = 77 \text{ mm} \pm 0,5 \text{ mm}$,
+% 	izračunana razdalja pa je 
+% 	\begin{equation}
+% 		f = 2R = 2 \cdot 35 \text{ mm} = 70 \text{ mm}
+% 	\end{equation}.\\
+% 	Za konkavno lečo pa sem izmeril goriščno razdaljo $f = 72 \text{ mm} \pm 0,5 \text{ mm}$, 
+% 	izračunana goriščna razdalja je 
+% 	\begin{equation}
+% 		f = -2R = -2 \cdot 35 \text{ mm} = -70 \text{ mm}
+% 	\end{equation}.\\
+% 	Pri sestavljeni lečo sem izmeril goriščno razdaljo $f = 157 \text{ mm} \pm 0,5 \text{ mm}$,
+% 	izračunal pa sem
+% 	\begin{equation}
+% 		\begin{split}
+% 			\frac{1}{f} &= \frac{1}{f_1} + \frac{1}{f_2} - \frac{d}{f_1 \cdot f_2} \\
+% 			f &= (\frac{1}{-70 \text{ mm}} + \frac{1}{70 \text{ mm}} - \frac{51 \text{ mm}}{-70 \text{ mm} \cdot 70 \text{ mm}})^{-1}\\
+% 			f &= 102 \text{ mm}
+% 		\end{split}
+% 	\end{equation}
+% 	če za izračun uporabimo izmerjene vrednosti dobimo, da je goriščna razdalja $f = 120 \text{ mm}$.
+% 	Kljub vsemu osnovne formule za izračun goriščne razdalje sestavljene leče sam ne morem
+% 	potrditi.
 
 
-\newpage
-\section{Plinski emisijski spektri}
-	\subsection*{Opis vaje in teoritična podlaga}
-	\subsection*{Uporabljeni pripomočki}
-	\subsection*{Grafi, ipd.}
-	\subsection*{Analiza rezultatov}
+% \newpage
+%TODO \section{Plinski emisijski spektri}
+% 	\subsection*{Opis vaje in teoritična podlaga}
+% 	\subsection*{Uporabljeni pripomočki}
+% 	\subsection*{Grafi, ipd.}
+% 	\subsection*{Analiza rezultatov}
 
 
 
