@@ -79,62 +79,62 @@ maxcitenames=1, mincitenames=1, sorting=nyt]{biblatex}   % Navajanje virov
 \begin{document}
 \pagenumbering{arabic}
 
-% \begin{center}
-% 	\thispagestyle{empty}
-% 	\includegraphics[scale=1]{slike/logotip_vegova_leze_brezokvirja.png}
-% 	\\
-% 	\textbf{Vegova ulica 4, 1000 Ljubljana}
+\begin{center}
+	\thispagestyle{empty}
+	\includegraphics[scale=1]{slike/logotip_vegova_leze_brezokvirja.png}
+	\\
+	\textbf{Vegova ulica 4, 1000 Ljubljana}
 
-% 	\vspace{\fill} 
-% 	Poročila vaj pri predmetu fizika
+	\vspace{\fill} 
+	Poročila vaj pri predmetu fizika
 
-% 	\Huge{\textbf{Poročila maturitetnih vaj}}
+	\Huge{\textbf{Poročila maturitetnih vaj}}
 
-% 	\normalsize
-% 	\vspace{\fill}
+	\normalsize
+	\vspace{\fill}
 
-% 	Mentor: Tomo Omahna, prof. \hfill Avtor: Jaka Kovač, G 4. b\\
-% 	\null
-% 	Ljubljana, oktober 2023 – \MMYYYYdate\today %zamenjaj <mesec in leto> z mesecem in letom začetka
-% \end{center}
-% \newpage
-% \thispagestyle{empty}
-% \null
-% \newpage
+	Mentor: Tomo Omahna, prof. \hfill Avtor: Jaka Kovač, G 4. b\\
+	\null
+	Ljubljana, oktober 2023 – \MMYYYYdate\today %zamenjaj <mesec in leto> z mesecem in letom začetka
+\end{center}
+\newpage
+\thispagestyle{empty}
+\null
+\newpage
 
-% \section*{Povzetek}
-% V tem delu bom predstavil kako sem izvedel maturitene vaje, njihove rezultate. Ob vsaki vaji
-% sem preverjal veljavnost meritev s teoretično izračunaimi vrednostmi.
-% \\ %prazna vrstica
-% \textbf{Ključe besede:} poročila maturitetnih vaj - fizika, fizika za srednjo šolo
+\section*{Povzetek}
+V tem delu bom predstavil kako sem izvedel maturitene vaje, njihove rezultate. Ob vsaki vaji
+sem preverjal veljavnost meritev s teoretično izračunaimi vrednostmi.
+\\ %prazna vrstica
+\textbf{Ključe besede:} poročila maturitetnih vaj - fizika, fizika za srednjo šolo
 
-% \vfill
-% \section*{Abstract}
-% \foreignlanguage{english}{This paper describes how to use \LaTeX{} to write a paper.
-% \\ %prazna vrstica
-% \textbf{Keywords:} \LaTeX{}, paper, \LaTeX{} template}
-% \vfill
+\vfill
+\section*{Abstract}
+\foreignlanguage{english}{This paper describes how to use \LaTeX{} to write a paper.
+\\ %prazna vrstica
+\textbf{Keywords:} \LaTeX{}, paper, \LaTeX{} template}
+\vfill
 
-% % KAZALO 
-% \newpage
-% \thispagestyle{empty} % ne številčimo strani
-% \tableofcontents % kazalo
+% KAZALO 
+\newpage
+\thispagestyle{empty} % ne številčimo strani
+\tableofcontents % kazalo
 
-% \begingroup     % kazalo slik
-% \makeatletter
-% \section*{Slike}
-% \@starttoc{lof}
-% \let\clearpage\relax
-% \makeatother
-% \endgroup
+\begingroup     % kazalo slik
+\makeatletter
+\section*{Slike}
+\@starttoc{lof}
+\let\clearpage\relax
+\makeatother
+\endgroup
 
 
-% \newpage
+\newpage
 
 \section*{O zapisu meritev}
 Prikazane številčne vrednosti so zaokrožene na 3 od 0 različna decimalna mesta (znanstven zapis).
 V izračunih se uporablja dejanska vrednost. Kjer ni drugače navedeno je vrednost podana na
-$\pm 0.5$ enot na zadnjem prikazanem mestu. Primer: $s = 10.0 \text{ m} = 10.0 \text{ m} \pm 0.05 \text{ m}$
+$\pm 0,5$ enot na zadnjem prikazanem mestu. Primer: $s = 10,0 \text{ m} = 10,0 \text{ m} \pm 0,05 \text{ m}$
 
 \section{Lastno nihanje vzmetnega nihala}  --- NOT DONE
 	\subsection*{Opis vaje in teoritična podlaga}
@@ -178,14 +178,15 @@ $\pm 0.5$ enot na zadnjem prikazanem mestu. Primer: $s = 10.0 \text{ m} = 10.0 \
 \section{Prosti pad}
  	\subsection*{Opis vaje in teoritična podlaga}
 	Na Zemlji vsa telesa v prostem padu pospešujejo z $ a = g \approx 10 \frac{\text{m}}{{\text{s}}^2}$.
-	Ta pospešek lahko tudi izračunamo iz splošnega gravitacijskega zakona:
+	Ta pospešek lahko izračunamo iz splošnega gravitacijskega zakona:
 	\begin{equation}
+		\label{gravity}
 		\begin{split}
 			F &= G \frac{mM}{r^2}; G = 6,67408 ± 0,00031 \cdot 10^{-11} \frac{\text{N}\text{m}^2}{\text{kg}^2} \\
 			a m &= G \frac{mM}{r^2} \\
 			g &= G \frac{M_{Zemlje}}{{r_{Zemlje}}^2} \\
 			g &\approx 6,67408 (1 \pm 4,64 \cdot 10^{-5}) \cdot 10^{-11} \frac{\text{N}\text{m}^2}{\text{kg}^2} \cdot \frac{5,972168 (1 \pm 8,37 \cdot 10 ^{-8}) \cdot 10^{24} \text{kg} }{(6,3710 (1 \pm 7,68 \cdot 10^{-6}) \cdot 10^6 \text{m}) ^2} \\
-			g &\approx 9,826 (1 \pm 6,18 \cdot 10^{-5}) \frac{\text{m}}{\text{s}^2} \approx (9,826 \pm 0,000608) \frac{\text{m}}{\text{s}^2} \quad \footnote{Vrednosti za zemljo iz \cite{earth}}
+			g &\approx 9,826 (1 \pm 6,18 \cdot 10^{-5}) \frac{\text{m}}{\text{s}^2} \approx (9,826 \pm 0,000608) \frac{\text{m}}{\text{s}^2} \qquad \mbox{\cite{earth}}
 		\end{split}
 	\end{equation}
 	Vrednost pa lahko imerimo tudi eksperimentalno. S senzorjem \footnote{fotovrata} lahko
@@ -202,6 +203,7 @@ $\pm 0.5$ enot na zadnjem prikazanem mestu. Primer: $s = 10.0 \text{ m} = 10.0 \
 
  	\subsection*{Uporabljeni pripomočki}
 	Verinier-jev vmesnik, fotovrata, merilna letev z razmakom 1 cm med oznakami
+	\vspace{\fill}
 
  	\subsection*{Grafi in izpis vrednost}
 
@@ -212,48 +214,52 @@ $\pm 0.5$ enot na zadnjem prikazanem mestu. Primer: $s = 10.0 \text{ m} = 10.0 \
 		\begin{tabular}{|l|l|l|l|l|l|}
 		\hline
 		$t$ [s] 	& $s$ [m] 	& $v$ [$\frac{\text{m}}{\text{s}}$] & $a$ [$\frac{\text{m}}{\text{s}^2}$] 	& $s_i$ [m] 	& $v_i$ [$\frac{\text{m}}{\text{s}}$] 	\\ \hline
-		0,010797	& 0			& 0,9261832							& 9,40661859							& 0				& 0,9261832								\\ \hline
-		0,020615	& 0,01		& 1,01853738						& 10,96116178							& 0,01			& 1,03578499							\\ \hline
-		0,02957		& 0,02		& 1,11669458						& 9,59826534							& 0,02016934	& 1,13544882							\\ \hline
+		0,010797	& 0			& 0,92618320						&  9,40661859							& 0				& 0,92618320							\\ \hline
+		0,020615	& 0,01		& 1,01853738						& 10,96116178							& 0,01000000	& 1,03578499							\\ \hline
+		0,02957		& 0,02		& 1,11669458						&  9,59826534							& 0,02016934	& 1,13544882							\\ \hline
 		0,037925	& 0,03		& 1,19688809						& 10,91835783							& 0,03033728	& 1,22635222							\\ \hline
-		0,045725	& 0,04		& 1,28205128						& 7,25793658-							& 0,04058345	& 1,31116494							\\ \hline
-		0,053208	& 0,05		& 1,33636242						& 13,14168756-							& 0,05081054	& 1,39034378							\\ \hline
-		0,060209	& 0,06		& 1,42836738						& 8,13883399							& 0,06121448	& 1,46630471							\\ \hline
+		0,045725	& 0,04		& 1,28205128						&  7,25793658							& 0,04058345	& 1,31116494							\\ \hline
+		0,053208	& 0,05		& 1,33636242						& 13,14168756							& 0,05081054	& 1,39034378							\\ \hline
+		0,060209	& 0,06		& 1,42836738						&  8,13883399							& 0,06121448	& 1,46630471							\\ \hline
 		0,066951	& 0,07		& 1,48323939						& 10,76145884							& 0,07148008	& 1,53737279							\\ \hline
-		0,073392	& 0,08		& 1,55255395						& 11,31882147-							& 0,08184505	& 1,60581174							\\ \hline
-		0,079556	& 0,09		& 1,62232317						& 7,96317857-							& 0,09218808	& 1,67119519							\\ \hline
-		0,085544	& 0,1		& 1,67000668						& 11,04308426							& 0,10248933	& 1,73376677							\\ \hline
-		0,091312	& 0,11		& 1,73370319						& 11,3041969							& 0,11287113	& 1,79455176							\\ \hline
+		0,073392	& 0,08		& 1,55255395						& 11,31882147							& 0,08184505	& 1,60581174							\\ \hline
+		0,079556	& 0,09		& 1,62232317						&  7,96317857							& 0,09218808	& 1,67119519							\\ \hline
+		0,085544	& 0,10		& 1,67000668						& 11,04308426							& 0,10248933	& 1,73376677							\\ \hline
+		0,091312	& 0,11		& 1,73370319						& 11,30419690							& 0,11287113	& 1,79455176							\\ \hline
 		\end{tabular}
 	\end{table}
 
-	Povprečni izmerjen pospešek je $\overline{a} = (10,3 \pm 2,2) \frac{\text{m}}{\text{s}^2}$, kar
+	Povprečni izmerjen pospešek je $\overline{a} = (10,3 \pm 2,2) \frac{\text{m}}{\text{s}^2} = 10,3 (1 \pm 0,21) \frac{\text{m}}{\text{s}^2}$, kar
 	sem tudi uporabil pri izračunanih vrednostih poti in hitrosti.
  	\subsection*{Analiza rezultatov}
-	Izmerjena vrednost je 
+	Izmerjena vrednost je za okoli 5 \% večja od vrednosti izračunane v enačbi \eqref{gravity}.
+	Ugotovil sem, da je napaka meritev tako velika, da je dejanksa vrednost znotraj merske
+	napake. Do tako velike napake je verjetno prišlo, saj se je letev med padcem 
+	\footnote{spust - ang. "descend"; padec - ang."fall" \cite{fallvsdescent}}
+	premikala tudi bočno, s tem pa prepotovala daljšo pot, kot če bi padala navpišno navzdol.
 
-% \newpage
-%TODO \section{Odbojnost}
-% 	\subsection*{Opis vaje in teoritična podlaga}
-% 	\subsection*{Uporabljeni pripomočki}
-% 	\subsection*{Grafi, ipd.}
-% 	\subsection*{Analiza rezultatov}
+\newpage
+\section{Odbojnost}
+	\subsection*{Opis vaje in teoritična podlaga}
+	\subsection*{Uporabljeni pripomočki}
+	\subsection*{Grafi, ipd.}
+	\subsection*{Analiza rezultatov}
 
-% \newpage
-%TODO \section{Boylov zakon}
-% 	\subsection*{Opis vaje in teoritična podlaga}
-% 	\subsection*{Uporabljeni pripomočki}
-% 	\subsection*{Grafi, ipd.}
-% 	\subsection*{Analiza rezultatov}
+\newpage
+\section{Boylov zakon}
+	\subsection*{Opis vaje in teoritična podlaga}
+	\subsection*{Uporabljeni pripomočki}
+	\subsection*{Grafi, ipd.}
+	\subsection*{Analiza rezultatov}
 
-% \newpage
-%TODO \section{Atwoodovo padalo}
-% 	\subsection*{Opis vaje in teoritična podlaga}
-% 	\subsection*{Uporabljeni pripomočki}
-% 	\subsection*{Grafi, ipd.}
-% 	\subsection*{Analiza rezultatov}
+\newpage
+\section{Atwoodovo padalo}
+	\subsection*{Opis vaje in teoritična podlaga}
+	\subsection*{Uporabljeni pripomočki}
+	\subsection*{Grafi, ipd.}
+	\subsection*{Analiza rezultatov}
 
-% \newpage
+\newpage
 \section{Dušeno nihanje v električnem krogu}
 	\subsection*{Opis vaje in teoritična podlaga}
 	Cilj vaje je izračunati koeficient dušenja $\beta$ v dušemen električnem nihajenm krogu.
@@ -396,7 +402,7 @@ $\pm 0.5$ enot na zadnjem prikazanem mestu. Primer: $s = 10.0 \text{ m} = 10.0 \
 		B = \mu_0 \frac{NI}{l}.
 	\end{equation}
 
-	Izračunana vrednot magnetnega polja Zemlje je $B = 54,3 \cdot 10^-6 \text{ T} (1 \pm 0.09)$,
+	Izračunana vrednot magnetnega polja Zemlje je $B = 54,3 \cdot 10^-6 \text{ T} (1 \pm 0,09)$,
 	kar je le 12 \% več od vrednosti, ki sem jo našel na internetu \cite{noaa} ($B = 48,3 \text{ } \mu \text{T} $)
 	\footnote{Vrednost za Ljubljano, 15. 11. 2023}
 
@@ -520,12 +526,77 @@ $\pm 0.5$ enot na zadnjem prikazanem mestu. Primer: $s = 10.0 \text{ m} = 10.0 \
 	\subsection*{Opis vaje in teoritična podlaga}
 	Elektroni lahko prehajajo med večimi energijskimi nivoji. Zaradi potrebe po ohranitvi
 	energije, se pri prehajanu iz višjega eregijskega nivoji na nižji nivo sprosti preostanek
-	energije v obliki fotona. Valovna dolžina je odvisna od energije fotona po enačbi $f = \frac{E_f}{h}$.
+	energije v obliki fotona. Valovna dolžina je odvisna od energije fotona po enačbi $f = \frac{E_f}{h}$,
+	kjer je $h = 6,62607015 \cdot 10^{-34} \frac{\text{J}}{\text{Hz}}$ oz. Planck-ova konstanta.
+	Vredno je povdariti, da to ni nek približek, Placnk-ova konstanta ima tako
+	kot svetloba hitrost točno vrednost.
+	\begin{quote} 
+		The kilogram, symbol kg, is the SI unit of mass. It is defined by taking the fixed
+		numerical value of the Planck constant $h$ to be $6,62607015 \cdot 10^{-34}$ when
+		expressed in the unit $\text{J} \cdot \text{s}$, which is equal to $\text{kg} \cdot \text{m}^2 \cdot \text{s}^{-1}$,
+		where the metre and the second are defined in terms of c and $\Delta \nu \text{C}$. \cite{redef}
+	\end{quote}
 
+	Kot je to vidno na fotografiji \ref{fig:mavrica} lahko z uklonsko mrežico svetlomo razvrstimo
+	po njeni valnovni dolžini, ker so v emisijskem spektru prisotne le nekatere valovne dolžine,
+	vidimo samo tiste, ki jih atom lahko oddaja.
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{slike/IMG_3563.png}
+		\caption{Emisijski spekter helija}
+		\label{fig:mavrica}
+	\end{figure}
+
+	Uklonski kot fotonov določene valovne dolžile lahko izračunamo z
+	\begin{equation}
+		\lambda = \frac{d \sin{\beta}}{N}
+	\end{equation}
+	kot $\beta$ pa lahko izračunamo z
+	\begin{equation}
+		\beta=\arctan{\frac{a}{l}}
+	\end{equation}.
+
+	Ko združomo obe enačbi, in upoštevamo, da je $N = 1$, saj je dobro viden le prvi red odmikov,
+	$d = 300 \frac{1}{\text{mm}}$ in $l = 40 \text{ cm}$ dobimo enačbo za izračun valovne dolžine:
+	\begin{equation}
+		\lambda = 3 * 10^{-6} \text{ m} \cdot \sin{(\arctan{(\frac{a}{40 \text{ cm}})})}
+	\end{equation}
+
+	\null
 	\subsection*{Uporabljeni pripomočki}
 	Spektralne cevi različnih plinov v ohišju z napetostnim virom, uklonska mrežica s 300 črtami/mm
-	\subsection*{Grafi, ipd.}
+	\subsection*{Meritve}
+	\subsubsection*{Argon}
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			barva 		& $a_l$ [cm]	& $a_d$ [cm]	& $a$ [cm]	& $\beta$ [°]	& $\lambda_{izmerjena}$ [nm]	& $\lambda_{prava}$ [nm]		\\ \hline
+			vijolična	& 6,30 			& 6,30 			& 6,30		& 8,95			& 466,75						& 462,54 \cite{specters-nist}	\\ \hline
+			zelena		& 8,30 			& 8,30 			& 8,30		& 11,72			& 609,52						& 613,38 \cite{specters-nist}	\\ \hline
+			roza		& 8,80 			& 8,80 			& 8,80		& 12,41			& 644,59						& 643,51 \cite{specters-nist}	\\ \hline
+		\end{tabular}
+	\end{table}
+
+	\subsubsection*{Helij}
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			barva		& $a_l$ [cm]	& $a_d$ [cm]	& $a$ [cm]	& $\beta$ [°]	& $\lambda_{izmerjena}$ [nm]	& $\lambda_{prava}$ [nm]		\\ \hline
+			vijolična	& 6,40			& / 			& 6,40		&  9,09			& 473,97						& 471,32 \cite{specters-nist}	\\ \hline
+			modra		& 6,80			& / 			& 6,80		&  9,65			& 502,79						& 501,57 \cite{specters-nist}	\\ \hline
+			cyan		& 7,30			& / 			& 7,30		& 10,34			& 538,60						& 587,56 \cite{specters-nist}	\\ \hline
+			oranžna		& 8,60			& / 			& 8,60		& 12,13			& 630,59						& 667,82 \cite{specters-nist}	\\ \hline
+			rdeča		& 9,70			& /				& 9,70		& 13,63			& 707,01						& 706,52 \cite{specters-nist}	\\ \hline
+		\end{tabular}
+	\end{table}
+
+	\null
 	\subsection*{Analiza rezultatov}
+	Meritve so presenetljivo točne, saj je povprečno relativno odstopanje od pravih vrednosti
+	največ 8 \%, povprečno pa 1,5 \%. 
 
 
 
