@@ -135,22 +135,10 @@ $\pm 0,5$ enot na zadnjem prikazanem mestu. Primer: $s = 10,0 \text{ m} = 10,0 \
 	\subsection*{Opis vaje in teoritična podlaga}
 	Nihanje količine $x$ lahko zapišemo z enačbo nihanja
 	\begin{equation}
-		\frac{d^2 x}{dt^2} + \omega_0^2 x =0 .
+		\frac{d^2 x}{dt^2} + \omega_0^2 x = 0 .
 	\end{equation}
 
-	\begin{figure}[h!]
-		\centering
-		\begin{tikzpicture}
-			\draw[black, very thick] (-5, -5) rectangle (5, 5);
-			\draw[black, thick] (-0.5, -3) rectangle (0.5, -1);
-			\draw[thick,decoration={aspect=.6, segment length=3mm,coil, amplitude=.2cm, pre length = .5cm, post length = .5cm},decorate] (0, -1) -- (0, 4);
-			\draw[black, very thick] (-4, 4) -- (4, 4);
-			\fill[pattern=north east lines] (-4, 4) rectangle (4, 4.5); 
-			\draw[black, fill=black] (0, -2) circle (.5mm);
-			\draw[black, ultra thick, ->] (0, -2) -- (0, -2.8) node[pos=0.5, right, xshift=.5cm] {$m\cdot a$};
-			\draw[black, ultra thick, ->] (0, -2) -- (0, -1.2) node[pos=0.5, right, xshift=.5cm] {$F_v$};
-		\end{tikzpicture}
-	\end{figure}
+ 
 
 	V našem primeru želimo preveriti sinusno nihanje vzmetnega nihala.
 	Hookov zakon pravi, da je $F_v = -ks$, po II. Newtonovem zakonu pa lahko zapišemo 
@@ -248,8 +236,25 @@ $\pm 0,5$ enot na zadnjem prikazanem mestu. Primer: $s = 10,0 \text{ m} = 10,0 \
 	papir
 
 	\subsection*{Meritve}
+	\begin{table}[!h]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		Barva papirja & $E_1$ [lux] & $E_2$ [lux] 	& $E_3$ [lux] 	& $\overline{E}$ [lux] 	& $a$   \\ \hline
+		bela          & 331			& 332			& 334			& 332 					& 1     \\ \hline
+		zelena        & 320 		& 322 			& 322 			& 321 					& 0,967 \\ \hline
+		rdeča         & 314 		& 315 			& 315 			& 315 					& 0,949 \\ \hline
+		oranžna       & 307 		& 308 			& 308 			& 308 					& 0,928 \\ \hline
+		modra         & 299 		& 301 			& 300 			& 300 					& 0,904 \\ \hline
+		rumena        & 326 		& 327 			& 327 			& 327 					& 0,985 \\ \hline
+		temno modra   & 285 		& 285 			& 285 			& 285 					& 0,858 \\ \hline
+		\end{tabular}
+	\end{table}
 
 	\subsection*{Analiza rezultatov}
+	Vidimo, da ima "temnejši" papir manjši albeda faktor. Meritev bi lahko izboljšali, če 
+	bi za osnovo uporabili ALU-folijo ali kaj podobnega. Bel papir zaradi površinske 
+	hrapavosti svetlobo razprši, kar povzroči zmanjšanje izmerjene osvetlitve.
 
 \newpage
 \section{Boylov zakon}
@@ -281,10 +286,54 @@ $\pm 0,5$ enot na zadnjem prikazanem mestu. Primer: $s = 10,0 \text{ m} = 10,0 \
 \newpage
 \section{Atwoodovo padalo}
 	\subsection*{Opis vaje in teoritična podlaga}
+	Atwoodovo padalo je George Atwood izumil kot enega izmed eksperimentlnih dokazov za
+	Newtonov II. zakon. \newline
+	
+	Predpostavimo sistem mas, med seboj povezani z lahko vrvico, položene na lahek škripec.
+	Ob začetku poskusa je sistem v ravnovesju, saj je na vsako stran vrvice obešena enaka
+	masa $m_0 = 50,9$ g. Ko v sistem na eno stran dodamo $m_N = 54,9$ g, začne ta stran pospeševati
+	proti tlom. 
+	\begin{figure}[h!]
+		\centering
+		\begin{tikzpicture}
+			\draw[black, very thick] (-3,-3.5) rectangle (3,3.5);
+			\draw[black, very thick] (0, 1.5) circle (1cm);
+			\draw[black, very thick] (1.25, 1.5) arc (0:180:1.25cm);
+			
+			%VRVICE
+			\draw[black, very thick] (1.25, 1.5) -- (1.25, -1.5); %desna vrvica
+			\draw[black, very thick] (-1.25, 1.5) -- (-1.25, 0.5); %leva vrvica
+			
+			%UTEŽI
+			\draw[black, very thick, rounded corners=10pt] (-2.25, 0.5) rectangle (-0.25, -0.5) node (A) at (-1.25, 0) {$m_0$}; %leva m_0
+			\draw[black, very thick, rounded corners=10pt, fill=white] (0.25, 0.5) rectangle (2.25, -0.5) node at (1.25, 0) {$m_0$}; %desna m_0
+			
+			\draw[black, very thick, rounded corners=10pt, fill=white] (0.25, -1.5) rectangle (2.25, -2.5) node at (1.25, -2) {$m_N$}; %desna m_N
+	
+			%SILE
+			\draw[black, very thick] (A) -- (-1.25, -1);
+			
+			\end{tikzpicture}
+		\caption{Atwoodovo padalo}
+	\end{figure}
+
+	Zapišemo lahko:
+	\begin{equation}
+		\begin{split}
+			m_N \cdot g &= (2m_0 + m_N) \cdot a \\
+			a &= g \cdot \frac{m_N}{2m_0 + m_N}
+		\end{split}
+	\end{equation}
 	
 	\subsection*{Uporabljeni pripomočki}
-	\subsection*{Grafi, ipd.}
+	različne uteži, sponke za papir, Verinierjev vmesnik, fotovrata s škripcem
+	\subsection*{Grafi}
+	\includegraphics[width=\linewidth]{slike/graf_v5_1.png}
+
 	\subsection*{Analiza rezultatov}
+	Izmerjen pospešek je $a = 3,27 \pm 0.67 \quad \frac{\text{m}}{\text{s}^2} = 3,27 (1 \pm 0.21)\quad \frac{\text{m}}{\text{s}^2}$.
+	Izračunana vrednost je $ a = 3,44 \quad \frac{\text{m}}{\text{s}^2}$ ker je znotraj 
+	merske napake.
 
 \newpage
 \section{Dušeno nihanje v električnem krogu}
@@ -640,7 +689,7 @@ $\pm 0,5$ enot na zadnjem prikazanem mestu. Primer: $s = 10,0 \text{ m} = 10,0 \
 \begin{samepage}
 	\thispagestyle{empty}
 	\section*{Izjava o avtorstvu}
-	Izjavljam, da je seminarska naloga v celoti moje avtorsko delo, ki sem ga 
+	Izjavljam, da so poročila v celoti moje avtorsko delo, ki sem ga 
 	izdelal samostojno s pomočjo navedene literature in pod vodstvom mentorja.
 
 	\vfill
