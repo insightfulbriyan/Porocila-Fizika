@@ -131,7 +131,7 @@ Prikazane številčne vrednosti so zaokrožene na 3 od 0 različna decimalna mes
 V izračunih se uporablja dejanska vrednost. Kjer ni drugače navedeno je vrednost podana na
 $\pm 0,5$ enot na zadnjem prikazanem mestu. Primer: $s = 10,0 \text{ m} = 10,0 \text{ m} \pm 0,05 \text{ m}$
 
-\section{Lastno nihanje vzmetnega nihala}  --- NOT DONE
+\section{Lastno nihanje vzmetnega nihala}
 	\subsection*{Opis vaje in teoritična podlaga}
 	Nihanje količine $x$ lahko zapišemo z enačbo nihanja
 	\begin{equation}
@@ -156,7 +156,16 @@ $\pm 0,5$ enot na zadnjem prikazanem mestu. Primer: $s = 10,0 \text{ m} = 10,0 \
 	\includegraphics[width=\linewidth]{slike/graf_v1_1.png}
 
 	\subsection*{Analiza rezultatov}
-
+	Krivuljo, ki se grafu poti najbolj prilega lahko opišemo z enačbo $s_{best\_fit}(t) = 0.162 \sin(6.57t) \text{ m}$.
+	Povprečna napaka v odmiku je s tem manjša kot 5 \%. Ko $s_{best\_fit}(t)$ odvedemo po 
+	času, dobimo hitrost, ki ga zapišemo z enačbo $v_{best\_fit}(t) = 1.062 \cos(6.57t) \enskip \frac{\text{m}}{\text{s}}$
+	s čimer od izmerjenih vrednosti v povprečju pridobimo manj kot 10 \% napake. Podobno
+	lahko storimo s pospeškom, ki pa je drugi odvod poti po času. Zapišemo 
+	$a_{best\_fit}(t) = - 6.97 \sin(6.57t) \enskip \frac{\text{m}}{\text{s}^2}$, s tem pa se od dejanskih vrednosti oddaljimo
+	za povprečno 30 \%. To napako verjetno povzročajo manjše napake pri meritvi odmika,
+	napaka na hitrosti in pospeški pa se zaradi tega povečuje.
+	
+	
 \newpage
 \section{Prosti pad}
  	\subsection*{Opis vaje in teoritična podlaga}
@@ -188,7 +197,7 @@ $\pm 0,5$ enot na zadnjem prikazanem mestu. Primer: $s = 10,0 \text{ m} = 10,0 \
 	Verinier-jev vmesnik, fotovrata, merilna letev z razmakom 1 cm med oznakami
 	\vspace{\fill}
 
- 	\subsection*{Grafi in izpis vrednost}
+ 	\subsection*{Graf in izpis vrednost}
 
 	\includegraphics[width=\linewidth]{slike/graf_v2_1.png}
 
@@ -197,18 +206,18 @@ $\pm 0,5$ enot na zadnjem prikazanem mestu. Primer: $s = 10,0 \text{ m} = 10,0 \
 		\begin{tabular}{|l|l|l|l|l|l|}
 		\hline
 		$t$ [s] 	& $s$ [m] 	& $v$ [$\frac{\text{m}}{\text{s}}$] & $a$ [$\frac{\text{m}}{\text{s}^2}$] 	& $s_i$ [m] 	& $v_i$ [$\frac{\text{m}}{\text{s}}$] 	\\ \hline
-		0,010797	& 0			& 0,92618320						&  9,40661859							& 0				& 0,92618320							\\ \hline
-		0,020615	& 0,01		& 1,01853738						& 10,96116178							& 0,01000000	& 1,03578499							\\ \hline
-		0,02957		& 0,02		& 1,11669458						&  9,59826534							& 0,02016934	& 1,13544882							\\ \hline
-		0,037925	& 0,03		& 1,19688809						& 10,91835783							& 0,03033728	& 1,22635222							\\ \hline
-		0,045725	& 0,04		& 1,28205128						&  7,25793658							& 0,04058345	& 1,31116494							\\ \hline
-		0,053208	& 0,05		& 1,33636242						& 13,14168756							& 0,05081054	& 1,39034378							\\ \hline
-		0,060209	& 0,06		& 1,42836738						&  8,13883399							& 0,06121448	& 1,46630471							\\ \hline
-		0,066951	& 0,07		& 1,48323939						& 10,76145884							& 0,07148008	& 1,53737279							\\ \hline
-		0,073392	& 0,08		& 1,55255395						& 11,31882147							& 0,08184505	& 1,60581174							\\ \hline
-		0,079556	& 0,09		& 1,62232317						&  7,96317857							& 0,09218808	& 1,67119519							\\ \hline
-		0,085544	& 0,10		& 1,67000668						& 11,04308426							& 0,10248933	& 1,73376677							\\ \hline
-		0,091312	& 0,11		& 1,73370319						& 11,30419690							& 0,11287113	& 1,79455176							\\ \hline
+		0,0108		& 0			& 0,93								&  9,41									& 0				& 0,926									\\ \hline
+		0,0206		& 0,01		& 1,02								& 10,96									& 0,010			& 1,036									\\ \hline
+		0,0296		& 0,02		& 1,12								&  9,60									& 0,020			& 1,135									\\ \hline
+		0,0379		& 0,03		& 1,20								& 10,92									& 0,030			& 1,226									\\ \hline
+		0,0457		& 0,04		& 1,28								&  7,26									& 0,046			& 1,311									\\ \hline
+		0,0532		& 0,05		& 1,34								& 13,14									& 0,051			& 1,390									\\ \hline
+		0,0602		& 0,06		& 1,43								&  8,14									& 0,061			& 1,466									\\ \hline
+		0,0670		& 0,07		& 1,48								& 10,76									& 0,071			& 1,537									\\ \hline
+		0,0734		& 0,08		& 1,55								& 11,32									& 0,082			& 1,606									\\ \hline
+		0,0796		& 0,09		& 1,62								&  7,96									& 0,092			& 1,671									\\ \hline
+		0,0855		& 0,10		& 1,67								& 11,04									& 0,102			& 1,734									\\ \hline
+		0,0913		& 0,11		& 1,73								& 11,30									& 0,113			& 1,795									\\ \hline
 		\end{tabular}
 	\end{table}
 
@@ -228,7 +237,7 @@ $\pm 0,5$ enot na zadnjem prikazanem mestu. Primer: $s = 10,0 \text{ m} = 10,0 \
 	vzamemo bel papir, koeficient $a$ izračunamo po formuli:
 
 	\begin{equation}
-		a = \frac{E(obarvan \quad papir)}{E(bel \quad papir)},
+		a = \frac{E(obarvan \enskip papir)}{E(bel \enskip papir)},
 	\end{equation}
 	kjer $E$ predstavlja osvetljenost oz. površinsko gostoto svetlobnega toka. 
 	\subsection*{Uporabljeni pripomočki}
@@ -257,31 +266,60 @@ $\pm 0,5$ enot na zadnjem prikazanem mestu. Primer: $s = 10,0 \text{ m} = 10,0 \
 	hrapavosti svetlobo razprši, kar povzroči zmanjšanje izmerjene osvetlitve.
 
 \newpage
-\section{Boylov zakon} -- NOT DONE
+\section{Boylov zakon} 
 	\subsection*{Opis vaje in teoritična podlaga}
 	Za idealni plin velja splošna plinska enačba:
 	\begin{equation}
-		PV = nRT,
+		pV = nRT,
 	\end{equation}
-	kjer je $P$ tlak plina, $V$ njegov volumen, $n = \frac{m}{M}$ količina snovi (v molih),
+	kjer je $p$ tlak plina, $V$ njegov volumen, $n = \frac{m}{M}$ količina snovi (v molih),
 	$R = 8,314 \frac{\text{m}^3 \cdot \text{Pa}}{\text{mol} \cdot \text{K}}$.
 	\footnote{Plinska konstanta $R$ je definirana kot produkt Avogadrovega števila $N_A$ 
 	in Boltzmanove konstante $k_B$. Vrednosti obeh sta bili z letom 2019 točno določeni, zato
 	lahko izračunamo tudi točno vrednost $R$ \cite{redef}} Ko enačbo preuredimo, in upoštevamo, da količine
 	plina v zaprtem postoru ne speminjamo (ohrani se $n$), lahko zapišemo:
 	\begin{equation}
-			\frac{PV}{T} = konst.
+			\frac{pV}{T} = konst.
 	\end{equation}
 	Če plin ohranja temperaturo (sprememba je izotermna) dobimo Boylov zakon.
 	\begin{equation}
-		P_1 V_1 = P_2 V_2
+		p_1 V_1 = p_2 V_2
 		\label{boyle}
 	\end{equation}
 
 	\subsection*{Uporabljeni pripomočki}
 	Brizga, Verinierjev vmesnik in senzor tlaka
-	\subsection*{Grafi, ipd.}
+	\subsection*{Tabela meritev in graf}
+	\begin{table}[h!] 
+		\centering
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		$V$ [ccm] 	& $p$ [kPa] & $pV$ 	& $\frac{pV}{\enspace \overline{pV} \enspace}$ [\%] 	\\ \hline
+		80.0 		& 26.0 		& 2081 	& 4.64 													\\ \hline
+		40.0 		& 52.0 		& 2079 	& 4.54 													\\ \hline
+		20.0 		& 99.6 		& 1991 	& 0.13 													\\ \hline
+		17.0 		& 118 		& 2001 	& 0.62 													\\ \hline
+		15.0 		& 132 		& 1983 	& 0.26 													\\ \hline
+		13.0 		& 150 		& 1954 	& 1.76 													\\ \hline
+		10.0 		& 192 		& 1919 	& 3.49 													\\ \hline
+		9.00 		& 211 		& 1901 	& 4.41 													\\ \hline
+		\enspace 	& Povprečje & 1989 	& 2.48 													\\ \hline
+		\end{tabular}
+	\end{table} \footnote{Ker sem svoje meritve izgubil, sem te prepisal iz knjižice z navodili
+	izvajanja vaj, ki smo jo dobili ob začetku leta \cite{vaje}}
+
+
+	\includegraphics[width=\linewidth]{slike/graf_v4_1.png}
+
 	\subsection*{Analiza rezultatov}
+	Boylov zakon pravi, da je produkt $p$ in $V$ konstanten, če se temperatura idealnega
+	plina ne spremeni. Z meritvami lahko to potrdim, saj je pri vseh merjenih volumnih
+	odstopanje od povprečja manj kot 5  \%. Če izračunamo (izmerimo) ploščino pod nastalo
+	krivuljo (z drugimi besedami, če izračunamo integral) dobimo delo, ki smo ga opravili,
+	če plin stisnemo iz $V_z$ na $V_k$.
+	\begin{equation}
+		\int_{V_z}^{V_k} p(V) \, dV = A
+	\end{equation}
 
 \newpage
 \section{Atwoodovo padalo}
@@ -331,8 +369,8 @@ $\pm 0,5$ enot na zadnjem prikazanem mestu. Primer: $s = 10,0 \text{ m} = 10,0 \
 	\includegraphics[width=\linewidth]{slike/graf_v5_1.png}
 
 	\subsection*{Analiza rezultatov}
-	Izmerjen pospešek je $a = 3,27 \pm 0.67 \quad \frac{\text{m}}{\text{s}^2} = 3,27 (1 \pm 0.21)\quad \frac{\text{m}}{\text{s}^2}$.
-	Izračunana vrednost je $ a = 3,44 \quad \frac{\text{m}}{\text{s}^2}$ ker je znotraj 
+	Izmerjen pospešek je $a = 3,27 \pm 0.67 \enskip \frac{\text{m}}{\text{s}^2} = 3,27 (1 \pm 0.21)\enskip \frac{\text{m}}{\text{s}^2}$.
+	Izračunana vrednost je $ a = 3,44 \enskip \frac{\text{m}}{\text{s}^2}$ ker je znotraj 
 	merske napake.
 
 \newpage
